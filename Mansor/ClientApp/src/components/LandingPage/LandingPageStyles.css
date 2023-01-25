@@ -1,0 +1,194 @@
+﻿body {
+    background-color: #424242 !important;
+    overflow-y: scroll;
+}
+
+::selection {
+    color: #D4B170;
+}
+
+.header {
+    background-color: black;
+    height: 100px;
+    width: 100%;
+    position: absolute;
+}
+
+.body-container {
+    width: 800px;
+    margin-left: 20%;
+    margin-bottom: 100px;
+    padding-top: 400px;
+    margin-top: -200px;
+}
+
+.logo {
+    width: 150px;
+    height: 130px;
+    padding: 10px 10px 10px 10px;
+    margin-left: 360px;
+    margin-top: 10px;
+}
+
+#heading-container {
+    background-color: #000000;
+    margin: 0;
+    margin-bottom: 50px;
+    height: 150px;
+}
+
+.company-title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 48px;
+    font-weight: 400;
+    float: right;
+    padding-right: 66px;
+    color: #4D4D4D;
+    margin-top: 40px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: sticky;
+}
+
+/*li {
+    float: left;
+
+}*/
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#task:hover {
+    background-color: #D4B170;
+    color: black;
+    cursor: pointer;
+}
+#shedule:hover {
+    background-color: #D4B170;
+    color: black;
+    cursor: pointer;
+}
+#notes:hover {
+    background-color: #D4B170;
+    color: black;
+    cursor: pointer;
+}
+.d-flex {
+    text-align: center;
+    background-color: #000000;
+    color: white;
+}
+
+.p-2:hover:not(.active) {
+    background-color: #D9D9D9;
+    color: black;
+}
+
+.main-content {
+    margin-top: -40px;
+    margin-right: 100px;
+    font-family: Arial;
+    color: white;
+}
+
+#tasksImg, #tableImg, #notesImg {
+    border: 10px solid #D9D9D9;
+    height: 300px;
+    width: 450px;
+    display: none;
+    margin-left: -50px;
+}
+
+#modal-tasks, #modal-table, #modal-notes {
+    margin-left: 380px;
+    width: 450px;
+    display: none;
+    margin-bottom: 100px;
+}
+
+.tasks-content, .table-content, .notes-content {
+    margin-left: -150px;
+    color: white;
+    margin-bottom: 20px;
+
+}
+
+button {
+    cursor: pointer;
+}
+
+#reg-text {
+    /*margin: 20px 0px 20px 600px;*/
+    color: #D4B170;
+    background-color: #424242;
+    border: 4px solid #D4B170;
+    margin-bottom: 20vh;
+    /*width: max-content;*/
+    /*height: max-content;*/
+    font-size: 25px;
+    text-decoration-line: none;
+    padding: 2px;
+    margin-left: 580px;
+}
+
+#btn-register {
+    margin-bottom: 20vh;
+    border: none;
+    background-color: #424242;
+}
+/*#reg-text {
+    color: #D4B170;
+    text-decoration-line: none;
+}
+
+#reg-text:hover {
+    color: black;
+    background-color: #D4B170;
+    text-decoration-line: none;
+}*/
+
+#reg-text:hover {
+    background-color: #D4B170;
+    color: black;
+}
+
+#btn-close {
+    margin-left: -150px;
+    color: #D4B170;
+    background-color: #424242;
+    border: 4px solid #D4B170;
+    width: 100px;
+    font-size: 20px;
+}
+
+#btn-close:hover {
+    background-color: #D4B170;
+    color: black;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+

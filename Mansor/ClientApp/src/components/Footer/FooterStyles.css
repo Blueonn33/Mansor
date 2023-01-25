@@ -1,0 +1,36 @@
+﻿.fa {
+    color: white;
+    font-size: 33px !important;
+    margin-right: 10px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+    color: #D4B170;
+}
+
+#footer {
+    height: 80px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: black;
+}
+
+#main-content, #dev {
+    display: inline-item;
+    justify-content: center;
+}
+
+#credits {
+    margin-top: 5px;
+    color: #fff;
+    font-weight: 500 !important;
+    font-size: 15px !important;
+}
+
+.nav-item {
+    padding-right: 200px;
+}
