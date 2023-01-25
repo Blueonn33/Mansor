@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\marti\\Desktop\\Mansor\\Mansor\\Mansor.Data\\Mansor.Data.csproj": {}
+    "C:\\Users\\marti\\Desktop\\Mansor-Website\\Mansor\\Mansor.Data\\Mansor.Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\marti\\Desktop\\Mansor\\Mansor\\Mansor.Data\\Mansor.Data.csproj": {
+    "C:\\Users\\marti\\Desktop\\Mansor-Website\\Mansor\\Mansor.Data\\Mansor.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\marti\\Desktop\\Mansor\\Mansor\\Mansor.Data\\Mansor.Data.csproj",
+        "projectUniqueName": "C:\\Users\\marti\\Desktop\\Mansor-Website\\Mansor\\Mansor.Data\\Mansor.Data.csproj",
         "projectName": "Mansor.Data",
-        "projectPath": "C:\\Users\\marti\\Desktop\\Mansor\\Mansor\\Mansor.Data\\Mansor.Data.csproj",
+        "projectPath": "C:\\Users\\marti\\Desktop\\Mansor-Website\\Mansor\\Mansor.Data\\Mansor.Data.csproj",
         "packagesPath": "C:\\Users\\marti\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\marti\\Desktop\\Mansor\\Mansor\\Mansor.Data\\obj\\",
+        "outputPath": "C:\\Users\\marti\\Desktop\\Mansor-Website\\Mansor\\Mansor.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\marti\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,6 +1,6 @@
 ﻿namespace Mansor.Data
 {
-    public class Class1
+    public class Mansor
     {
 
     }
