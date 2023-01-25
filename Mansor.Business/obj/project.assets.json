@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\marti\\Desktop\\Mansor-Website\\Mansor\\Mansor.Business\\Mansor.Business.csproj",
+      "projectUniqueName": "C:\\Users\\marti\\Desktop\\Mansor-official\\Mansor\\Mansor.Business\\Mansor.Business.csproj",
       "projectName": "Mansor.Business",
-      "projectPath": "C:\\Users\\marti\\Desktop\\Mansor-Website\\Mansor\\Mansor.Business\\Mansor.Business.csproj",
+      "projectPath": "C:\\Users\\marti\\Desktop\\Mansor-official\\Mansor\\Mansor.Business\\Mansor.Business.csproj",
       "packagesPath": "C:\\Users\\marti\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\marti\\Desktop\\Mansor-Website\\Mansor\\Mansor.Business\\obj\\",
+      "outputPath": "C:\\Users\\marti\\Desktop\\Mansor-official\\Mansor\\Mansor.Business\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\marti\\AppData\\Roaming\\NuGet\\NuGet.Config",
