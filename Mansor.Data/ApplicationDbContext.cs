@@ -12,20 +12,35 @@ namespace Mansor.Data
         public DbSet<TaskGroup> TaskGroups => Set<TaskGroup>();
         public DbSet<TaskItem> TaskItems => Set<TaskItem>();
 
-        public ApplicationDbContext(DbContextOptions options)
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
            : base(options)
         {
 
         }
 
-        protected override void OnModelCreating(ModelBuilder builder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(builder);
+            modelBuilder.Entity<TaskGroup>()
+                .HasOne(t => t.User)
+                .WithMany()
+                .HasForeignKey(t => t.UserId);
 
-            builder.Entity<User>().ToTable("Users");
+            modelBuilder.Entity<TaskItem>()
+                .HasOne(t => t.TaskGroup)
+                .WithMany()
+                .HasForeignKey(t => t.Id);
 
-            SeedInitialData(builder);
+            SeedInitialData(modelBuilder);
         }
+
+        //protected override void OnModelCreating(ModelBuilder builder)
+        //{
+        //    base.OnModelCreating(builder);
+
+        //    builder.Entity<User>().ToTable("Users");
+
+        //    SeedInitialData(builder);
+        //}
 
         private void SeedInitialData(ModelBuilder builder)
         {
