@@ -8,6 +8,7 @@ namespace Mansor.Data.Models
 {
     public class TaskGroup
     {
+        [Key]
         public int Id { get; set; }
         public string Name { get; set; }
         public int UserId { get; set; }

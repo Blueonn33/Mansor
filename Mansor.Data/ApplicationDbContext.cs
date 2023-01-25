@@ -1,5 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Mansor.Data.Models;
+using Microsoft.Extensions.Options;
+using IdentityServer4.EntityFramework.Options;
+using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
 
 namespace Mansor.Data
 {
@@ -8,6 +11,12 @@ namespace Mansor.Data
         public DbSet<User> Users => Set<User>();
         public DbSet<TaskGroup> TaskGroups => Set<TaskGroup>();
         public DbSet<TaskItem> TaskItems => Set<TaskItem>();
+
+        public ApplicationDbContext(DbContextOptions options)
+           : base(options)
+        {
+
+        }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -34,7 +43,7 @@ namespace Mansor.Data
 
             builder.Entity<TaskGroup>().HasData(
                 new TaskGroup { Id = 1, Name = "MentorMate", UserId = 1 },
-                new TaskGroup { Id = 2, Name = "Homework", UserId = 1 },
+                new TaskGroup { Id = 2, Name = "Homework", UserId = 1 }
                 );
         }
     }
