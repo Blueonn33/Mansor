@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32505.173
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mansor", "Mansor\Mansor.csproj", "{DAF26947-69FC-4CCF-BADF-50E1FF2349B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mansor.Business", "Mansor.Business\Mansor.Business.csproj", "{86565ABB-734B-4583-BCF8-6D864B328351}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mansor.Data", "Mansor.Data\Mansor.Data.csproj", "{C4123B11-2ED5-4AD5-A403-AB995C13CE7B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DAF26947-69FC-4CCF-BADF-50E1FF2349B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAF26947-69FC-4CCF-BADF-50E1FF2349B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAF26947-69FC-4CCF-BADF-50E1FF2349B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAF26947-69FC-4CCF-BADF-50E1FF2349B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86565ABB-734B-4583-BCF8-6D864B328351}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86565ABB-734B-4583-BCF8-6D864B328351}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86565ABB-734B-4583-BCF8-6D864B328351}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86565ABB-734B-4583-BCF8-6D864B328351}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4123B11-2ED5-4AD5-A403-AB995C13CE7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4123B11-2ED5-4AD5-A403-AB995C13CE7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4123B11-2ED5-4AD5-A403-AB995C13CE7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4123B11-2ED5-4AD5-A403-AB995C13CE7B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {15C6B271-7D14-46E2-8E40-635A6EE31956}
+	EndGlobalSection
+EndGlobal
