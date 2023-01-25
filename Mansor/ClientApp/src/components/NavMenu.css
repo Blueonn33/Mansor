@@ -1,0 +1,46 @@
+﻿a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+html {
+    font-size: 14px;
+}
+
+#brand {
+    color: #424242;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+#navigation-content {
+    background-color: black !important;
+    position: absolute;
+    height: auto;
+    left: 0px;
+    right: 0px;
+    /*margin-top: -80px;*/
+}
+
+.logo-img {
+    /*margin-left: -30%;*/
+    margin-right: 10px;
+}
+
+#btn-login:hover {
+    background-color: #D4B170;
+    color: black;
+}
+
+#btn-login {
+}
+
+#brand {
+    font-size: 35px;
+    margin-right: 45%;
+}
