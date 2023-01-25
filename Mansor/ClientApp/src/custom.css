@@ -1,0 +1,10 @@
+#line {
+    height: 5px;
+    border-width: 0;
+    color: black;
+    background-color: black;
+}
+::selection {
+    color: #D4B170;
+    background-color: white;
+}
