@@ -1,24 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Text;
+//using System.Threading.Tasks;
 
-namespace Mansor.Data.Repositories.Interfaces
-{
-    public interface IRepository<TEntity> where TEntity : class
-    {
-        Task<TEntity?> FindAsync(params object[] keyValues);
-        Task<TEntity> AddAsync(TEntity entity);
+//namespace Mansor.Data.Repositories.Interfaces
+//{
+//    public interface IRepository<TEntity> where TEntity : class
+//    {
+//        Task<TEntity?> FindAsync(params object[] keyValues);
+//        Task<TEntity> AddAsync(TEntity entity);
 
-        Task<IEnumerable<TEntity>> AddRangeAsync(IEnumerable<TEntity> entities);
+//        Task<IEnumerable<TEntity>> AddRangeAsync(IEnumerable<TEntity> entities);
 
-        Task UpdateAsync(TEntity entity);
-        Task UpdateRangeAsync(IEnumerable<TEntity> entities);
+//        Task UpdateAsync(TEntity entity);
+//        Task UpdateRangeAsync(IEnumerable<TEntity> entities);
 
-        Task DeleteAsync(TEntity entity);
-        Task DeleteAsync(params object[] keyValues);
+//        Task DeleteAsync(TEntity entity);
+//        Task DeleteAsync(params object[] keyValues);
 
-        Task DeleteRangeAsync(IEnumerable<TEntity> entities);
-    }
-}
+//        Task DeleteRangeAsync(IEnumerable<TEntity> entities);
+//    }
+//}

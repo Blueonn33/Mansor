@@ -11,13 +11,13 @@ namespace Mansor.Data.Models
     {
         [Key]
         public int Id { get; set; }
-        [Required]
-        public string Name { get; set; }
-        [Required]
-        public string Email { get; set; }
-        [Required]
-        public string Password { get; set; }
 
-        public virtual List<TaskGroup> TaskGroups { get; set; }
+        public string Name { get; set; } = null!;
+
+        public string Email { get; set; } = null!;
+
+        public string Password { get; set; } = null!;
+
+        public virtual List<TaskGroup> TaskGroups { get; set; } = null!;
     }
 }

@@ -11,9 +11,10 @@ namespace Mansor.Data.Models
     {
         [Key]
         public int Id { get; set; }
-        public string Name { get; set; }
-        public int UserId { get; set; }
 
-        public virtual User User { get; set; }
+        public string Name { get; set; } = null!;
+
+        public virtual User User { get; set; } = null!;
+        public virtual List<TaskItem> TaskItems { get; set; } = null!;
     }
 }

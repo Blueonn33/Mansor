@@ -10,3 +10,6 @@ C:\Users\marti\Desktop\Mansor-official\Mansor\Mansor.Business\obj\Debug\net6.0\M
 C:\Users\marti\Desktop\Mansor-official\Mansor\Mansor.Business\obj\Debug\net6.0\refint\Mansor.Business.dll
 C:\Users\marti\Desktop\Mansor-official\Mansor\Mansor.Business\obj\Debug\net6.0\Mansor.Business.pdb
 C:\Users\marti\Desktop\Mansor-official\Mansor\Mansor.Business\obj\Debug\net6.0\ref\Mansor.Business.dll
+C:\Users\marti\Desktop\Mansor-official\Mansor\Mansor.Business\bin\Debug\net6.0\Mansor.Data.dll
+C:\Users\marti\Desktop\Mansor-official\Mansor\Mansor.Business\bin\Debug\net6.0\Mansor.Data.pdb
+C:\Users\marti\Desktop\Mansor-official\Mansor\Mansor.Business\obj\Debug\net6.0\Mansor.Business.csproj.CopyComplete

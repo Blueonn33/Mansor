@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Mansor.Data\Mansor.Data.csproj" />
+  </ItemGroup>
+
 </Project>

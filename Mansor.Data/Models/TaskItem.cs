@@ -11,10 +11,12 @@ namespace Mansor.Data.Models
     {
         [Key]
         public int Id { get; set; }
-        public string Value { get; set; }
+
+        public string Value { get; set; } = null!;
+
         public bool IsCompleted { get; set; }
 
-        public virtual TaskGroup TaskGroup { get; set; }
-        public virtual List<TaskItem> TaskItems { get; set; }
+        public virtual TaskGroup TaskGroup { get; set; } = null!;
+
     }
 }

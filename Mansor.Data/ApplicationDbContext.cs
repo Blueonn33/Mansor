@@ -8,9 +8,9 @@ namespace Mansor.Data
 {
     public class ApplicationDbContext : DbContext
     {
-        public DbSet<User> Users => Set<User>();
-        public DbSet<TaskGroup> TaskGroups => Set<TaskGroup>();
-        public DbSet<TaskItem> TaskItems => Set<TaskItem>();
+        public DbSet<User> Users { get; set; } = null!;
+        public DbSet<TaskGroup> TaskGroups { get; set; } = null!;
+        public DbSet<TaskItem> TaskItems { get; set; } = null!;
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
            : base(options)
@@ -18,35 +18,19 @@ namespace Mansor.Data
 
         }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder builder)
         {
-            modelBuilder.Entity<TaskGroup>()
-                .HasOne(t => t.User)
-                .WithMany()
-                .HasForeignKey(t => t.UserId);
+            base.OnModelCreating(builder);
 
-            modelBuilder.Entity<TaskItem>()
-                .HasOne(t => t.TaskGroup)
-                .WithMany()
-                .HasForeignKey(t => t.Id);
+            builder.Entity<User>().ToTable("Users");
 
-            SeedInitialData(modelBuilder);
+            SeedInitialData(builder);
         }
-
-        //protected override void OnModelCreating(ModelBuilder builder)
-        //{
-        //    base.OnModelCreating(builder);
-
-        //    builder.Entity<User>().ToTable("Users");
-
-        //    SeedInitialData(builder);
-        //}
 
         private void SeedInitialData(ModelBuilder builder)
         {
             var email = "martin17@gmail.com";
             var password = "171717";
-            var adminUserId = Guid.NewGuid().ToString();
             var user = new User
             {
                 Id = 1,
@@ -54,12 +38,15 @@ namespace Mansor.Data
                 Email = email,
                 Password = password
             };
+            var secondUser = new User
+            {
+                Id = 2,
+                Name = "Yoana Ivanova",
+                Email = "yoana14@gmail.com",
+                Password = "141414"
+            };
             builder.Entity<User>().HasData(user);
-
-            builder.Entity<TaskGroup>().HasData(
-                new TaskGroup { Id = 1, Name = "MentorMate", UserId = 1 },
-                new TaskGroup { Id = 2, Name = "Homework", UserId = 1 }
-                );
+            builder.Entity<User>().HasData(secondUser);
         }
     }
 }
