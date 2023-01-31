@@ -14,6 +14,8 @@ namespace Mansor.Data.Models
 
         public string Name { get; set; } = null!;
 
+        public int UserId { get; set; }
+
         public virtual User User { get; set; } = null!;
         public virtual List<TaskItem> TaskItems { get; set; } = null!;
     }

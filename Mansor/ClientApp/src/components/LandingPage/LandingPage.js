@@ -85,8 +85,8 @@ export class LandingPage extends Component {
                                 <img id="tableImg" src='/Images/Timetable.png' alt="Time table" href='/Images/Timetable.png'/>
                             </a>
                         </div>
-                        <div class="body-content">
-                            <div class="table-content">
+                        <div className="body-content">
+                            <div className="table-content">
                                 <h2 id="h2-table">School timetable</h2>
                                 <p>Add school subjects to the timetable.</p>
                                 <p>The program is divided into five columns - one for each day of the week.</p>

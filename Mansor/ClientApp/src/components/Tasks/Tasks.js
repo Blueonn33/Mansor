@@ -4,8 +4,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.js';
 import 'bootstrap/dist/css/bootstrap.css';
 import { FaBars } from "react-icons/fa";
+import { endpoints } from '../../endpoints';
 
 export class Tasks extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            value: ''
+        }
+    }
     static displayName = Tasks.name;
 
     invalidInput() {
@@ -42,15 +49,29 @@ export class Tasks extends Component {
         //}, false);
     }
    
-    newElement() {
+    createTask() {
         var li = document.createElement("li");
-        var inputValue = document.getElementById("myInput").value;
-        var t = document.createTextNode(inputValue);
+        var input = this.state.value;
+        //var inputValue = document.getElementById("myInput").value;
+
+        var t = document.createTextNode(input);
         li.appendChild(t);
-        if (inputValue === '') {
+
+        if (input === '') {
             this.invalidInput();
         } else {
-          
+            fetch(endpoints.createTask(), {
+                method: 'POST',
+                mode: 'no-cors',
+                credentials: 'include' ,
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "Value": input,
+                    "TaskGroupId": 1
+                })
+            })
             document.getElementById("tasks-list").appendChild(li);
         }
         document.getElementById("myInput").value = "";
@@ -85,7 +106,9 @@ export class Tasks extends Component {
                         <hr id="line"></hr>
                         <p>Homework</p>
                         <p>MentorMate</p>
-                        <button type="button" id="btn-add">Add</button>
+                        <button type="button" id="btn-add"
+                            onClick={() => this.createTask()}
+                        >Add</button>
                     </div>
                     
                 </div>
@@ -97,8 +120,10 @@ export class Tasks extends Component {
                 </div>
 
                 <div id="myDIV" className="task-input">
-                    <input type="text" id="myInput" />
-                    <span onClick={() => this.newElement()} className="addBtn">Add</span>
+                    <input type="text" id="myInput"
+                        onChange={(e) => this.setState({ 'value': e.target.value })}
+                    />
+                    <span onClick={() => this.createTask()} className="addBtn">Add</span>
                 </div>
 
                 <ul id="tasks-list">
@@ -107,7 +132,6 @@ export class Tasks extends Component {
                 <ul id="remove-li">
                 </ul>
 
-                {/*<button type="button" className="removeLi">X</button>*/}
                 <div id="snackbar">Еnter text in the input field</div>
             </div>
         );
