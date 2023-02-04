@@ -21,6 +21,7 @@ export default class App extends Component {
                     <Route path='/' element={<LandingPage />} />
                     <Route path='/register' element={<RegisterMenu />} />
                     <Route path='/tasks' element={<Tasks />} />
+                    <Route path='/tasksList/:taskGroupID' element={<Tasks />} />
                 </Routes>
             </Layout>
         );

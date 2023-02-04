@@ -5,20 +5,35 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
 using System.Text.Json.Serialization;
+using Mansor.Data.Repositories.Interfaces;
+using Mansor.Business.Services;
+using Mansor.Business.Services.Interfaces;
+using Mansor.Data.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddRazorPages();
 builder.Services.AddCors();
 
-//var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-//builder.Services.AddDbContext<ApplicationDbContext>(options =>
-//    options.UseSqlServer(connectionString));
-
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+builder.Services.AddScoped<IUsersRepository, UsersRepository>();
+builder.Services.AddScoped<IUsersService, UsersService>();
+
+builder.Services.AddScoped<ITaskGroupsRepository, TaskGroupsRepository>();
+builder.Services.AddScoped<ITaskGroupsService, TaskGroupsService>();
+
+builder.Services.AddScoped<ITaskItemsRepository, TaskItemsRepository>();
+builder.Services.AddScoped<ITaskItemsService, TaskItemsService>();
+
 var app = builder.Build();
+
+app.UseCors(x => x
+                   .AllowAnyMethod()
+                   .AllowAnyHeader()
+                   .SetIsOriginAllowed(origin => true)
+                   .AllowCredentials());
 
 if (!app.Environment.IsDevelopment())
 {

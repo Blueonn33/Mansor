@@ -9,50 +9,40 @@
     public class TaskItemsController : ControllerBase
     {
         private readonly ITaskItemsService _taskItemsService;
-        public TaskItemsController(ITaskItemsService taskItemsService)
+        private readonly ITaskGroupsService _taskGroupsService;
+
+        public TaskItemsController(ITaskItemsService taskItemsService, ITaskGroupsService taskGroupsService)
         {
             _taskItemsService = taskItemsService;
+            _taskGroupsService = taskGroupsService;
         }
 
         [HttpGet]
-        [Route("api/taskItems")]
-        public async Task<IEnumerable<TaskItem>> GetAllTaskItems()
+        [Route("api/tasksList/{taskGroupId}")]
+        public async Task<IActionResult> GetTaskItemsByTaskGroupId([FromRoute] int taskGroupId)
         {
-            return await _taskItemsService.GetTaskItemsAsync();
+            var taskItems = await _taskItemsService.GetTaskItemsByTaskGroupId(taskGroupId);
+
+            if (!taskItems.Any())
+            {
+                return BadRequest("No existing task items!");
+            }
+            return Ok(taskItems);
         }
 
-        //[HttpPost]
-        //[Route("api/create")]
-        //public async Task<IActionResult> CreateTaskItem([FromBody] TaskItem createTaskItem)
-        //{
-        //    var taskItem = await _taskItemsService.GetTaskItemByValueAsync(createTaskItem.Value);
-
-        //    if (taskItem == null)
-        //    {
-        //        return BadRequest("There is no text in the input");
-        //    }
-
-        //    await _taskItemsService.AddTaskItemAsync(createTaskItem);
-        //    return Ok(createTaskItem);
-        //}
-
         [HttpPost]
-        [Route("api/taskItem/create")]
+        [Route("api/taskItem/create/{taskGroupId}")]
         public async Task<IActionResult> CreateTaskItem([FromRoute] int taskGroupId, [FromBody] TaskItemRequestModel taskItemRequestModel)
         {
-            var taskGroup = await _tenantsService.GetTenantByIdAsync(tenandId);
-            var taskGroup = trackingGroupRequestModel.ToCreateTrackingGroup(tenant);
-            var result = await _trackingGroupsService.CreateTrackingGroup(tracker);
+            var taskGroup = await _taskGroupsService.GetTaskGroupByIdAsync(taskGroupId);
+            var taskItem = taskItemRequestModel.ToCreateTaskItem(taskGroupId, taskGroup);
+            var result = await _taskItemsService.AddTaskItem(taskItem);
 
-            if (result == null)
-            {
-                return BadRequest("The tracker already exists");
-            }
-            else
+            if (result != null)
             {
                 return Ok(result);
             }
-
+            return BadRequest("Enter a text");
         }
     }
 }

@@ -16,11 +16,19 @@ namespace Mansor.Business.Services
 
         public async Task<IEnumerable<TaskItem>> GetTaskItemsAsync() => await _taskItemsRepository.GetAllTaskItems();
 
-        public async Task AddTaskItemAsync(TaskItem taskItem) => await _taskItemsRepository.AddAsync(taskItem);
+        public async Task<TaskItem> AddTaskItem(TaskItem taskItem)
+        {
+            return await _taskItemsRepository.AddAsync(taskItem);
+        }
 
         public async Task<TaskItem?> GetTaskItemByValueAsync(string value)
         {
             return await _taskItemsRepository.GetTaskItemByValue(value);
+        }
+
+        public async Task<IEnumerable<TaskItem>> GetTaskItemsByTaskGroupId(int id)
+        {
+            return await _taskItemsRepository.GetTaskItemsByTaskGroupId(id);
         }
     }
 }

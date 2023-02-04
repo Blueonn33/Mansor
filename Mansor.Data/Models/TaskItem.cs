@@ -13,5 +13,11 @@ namespace Mansor.Data.Models
 
         public virtual TaskGroup TaskGroup { get; set; } = null!;
 
+        public int TaskGroupId { get; set; }
+
+        public TaskItem()
+        {
+            IsCompleted = false;
+        }
     }
 }

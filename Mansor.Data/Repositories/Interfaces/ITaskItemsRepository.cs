@@ -7,5 +7,6 @@ namespace Mansor.Data.Repositories.Interfaces
         Task<int> GetCountAsync();
         Task<IEnumerable<TaskItem>> GetAllTaskItems();
         Task<TaskItem?> GetTaskItemByValue(string value);
+        Task<IEnumerable<TaskItem>> GetTaskItemsByTaskGroupId(int taskGroupId);
     }
 }

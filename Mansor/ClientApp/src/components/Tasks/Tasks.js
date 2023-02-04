@@ -5,13 +5,21 @@ import 'bootstrap/dist/js/bootstrap.js';
 import 'bootstrap/dist/css/bootstrap.css';
 import { FaBars } from "react-icons/fa";
 import { endpoints } from '../../endpoints';
+import TaskContainerComponent from '../TasksComponent/TaskContainerComponent';
+import { AddTaskGroup } from '../AddTaskGroup/AddTaskGroup';
 
 export class Tasks extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            value: ''
+            value: '',
+            tasks: []
         }
+        this.loadTasks = this.loadTasks.bind(this);
+        let splittedURL = window.location.pathname.split('/');
+        this.taskGroupId = splittedURL[splittedURL.length - 1];
+        //this.createTask = this.createTask.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
     static displayName = Tasks.name;
 
@@ -21,75 +29,72 @@ export class Tasks extends Component {
         setTimeout(function () { msg.className = msg.className.replace("show", ""); }, 3000);
     }
 
-    useElements = () => {
-        //var myNodelist = document.getElementsByTagName("LI");
-        //for (var i = 0; i < myNodelist.length; i++) {
-        //    var span = document.createElement("SPAN");
-        //    var txt = document.createTextNode("\u00D7");
-        //    span.className = "close";
-        //    span.appendChild(txt);
-        //    myNodelist[i].appendChild(span);
-        //}
-
-        // Click on a close button to hide the current list item
-        //var close = document.getElementsByClassName("close");
-        //for (var i = 0; i < close.length; i++) {
-        //    close[i].onClick = function () {
-        //        var div = this.parentElement;
-        //        div.style.display = "none";
-        //    }
-        //}
-
-        // Add a "checked" symbol when clicking on a list item
-        //var list = document.querySelector('ul');
-        //list.addEventListener('onClick', function (ev) {
-        //    if (ev.target.tagName === 'LI') {
-        //        ev.target.classList.toggle('checked');
-        //    }
-        //}, false);
+    async componentDidMount() {
+        this.loadTasks();
     }
-   
-    createTask() {
-        var li = document.createElement("li");
-        var input = this.state.value;
-        //var inputValue = document.getElementById("myInput").value;
-
-        var t = document.createTextNode(input);
-        li.appendChild(t);
-
-        if (input === '') {
-            this.invalidInput();
-        } else {
-            fetch(endpoints.createTask(), {
-                method: 'POST',
-                mode: 'no-cors',
-                credentials: 'include' ,
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    "Value": input,
-                    "TaskGroupId": 1
-                })
-            })
-            document.getElementById("tasks-list").appendChild(li);
-        }
-        document.getElementById("myInput").value = "";
-
-        var span = document.createElement("SPAN");
-        var txt = document.createTextNode("\u00D7");
-        span.className = "close";
-        span.appendChild(txt);
-        li.appendChild(span);
-
-        var closebtns = document.getElementsByClassName("close");
-
-        for (var i = 0; i < closebtns.length; i++) {
-            closebtns[i].addEventListener("click", function () {
-                this.parentElement.style.display = 'none';
-            });
-        }
+    async loadTasks(taskGroupId) {
+        let splittedURL = window.location.pathname.split('/')
+        taskGroupId = splittedURL[splittedURL.length - 1]
+        await fetch(`https://localhost:7286/api/taskItems/${Number(taskGroupId)}`)
+            .then((res) => res.json())
+            .then((res) => this.setState({ tasks: res }))
     }
+
+    //async createTask() {
+    //    //var li = document.createElement("li");
+    //    //var taskGroupId = this.props.location.pathname.split('/')[2]
+    //    //var t = document.createTextNode(inputValue);
+    //    //li.appendChild(t);
+
+    //    var inputValue = document.getElementById("tasksInput").value;
+
+    //    if (inputValue === '') {
+    //        this.invalidInput();
+    //    }
+    //    else {
+    //        console.log(inputValue);
+    //        await fetch(endpoints.createTask(), {
+    //            method: 'POST',
+    //            headers: {
+    //                'Content-Type': 'application/json'
+    //            },
+    //            body: JSON.stringify({
+    //                "Value": inputValue,
+    //                "IsCompleted": false,
+    //                "TaskGroupId": 1
+    //            })
+    //        })
+    //            .then(res => res.json())
+    //            .then(response => console.log('Success: ', JSON.stringify(response)))
+    //            .catch(error => console.error('Error: ', error));
+
+    //        //document.getElementById("tasks-list").appendChild(li);
+    //    }
+    //    /*document.getElementById("tasksInput").value = "";*/
+
+    //    //var span = document.createElement("SPAN");
+    //    //var txt = document.createTextNode("\u00D7");
+    //    //span.className = "close";
+    //    //span.appendChild(txt);
+    //    //li.appendChild(span);
+
+    //    //var closebtns = document.getElementsByClassName("close");
+
+    //    //for (var i = 0; i < closebtns.length; i++) {
+    //    //    closebtns[i].addEventListener("click", function () {
+    //    //        this.parentElement.style.display = 'none';
+    //    //    });
+    //    //}
+    //}
+
+    handleChange(event) {
+        this.setState({ value: event.target.value });
+    }
+
+    componentDidMount() {
+        this.render();
+    }
+
     render() {
         return (
             <div>
@@ -100,17 +105,53 @@ export class Tasks extends Component {
                     </div>
                     <hr id="line"></hr>
                     <div className="offcanvas-body text-white">
-                        <p>Daily</p>
-                        <p>Important</p>
-                        <p>Tasks</p>
-                        <hr id="line"></hr>
-                        <p>Homework</p>
-                        <p>MentorMate</p>
-                        <button type="button" id="btn-add"
-                            onClick={() => this.createTask()}
-                        >Add</button>
+                        <input type="text" className="group-input" />
+                        <button type="button" id="btn-addGroup">Add</button>
                     </div>
                     
+                </div>
+
+                <div className='tasksListWrapper d-flex justify-content-center align-items-center' >
+                   
+                    <form className='tasksContainer'>
+                        
+                        <div className='tasksGroupNameWrapper d-flex'>
+                            <h4 className='tasksGroupName'>Daily</h4>
+                            {/*<div>*/}
+                            {/*    <button type="button" className="groups">Groups</button>*/}
+                            {/*</div>*/}
+                            <div>
+                                <AddTaskGroup />
+                            </div>
+
+                        </div>
+                        <div className="container">
+                            {/*<a className="link_orange ps-5" data-bs-toggle="" href={`https://localhost:44494/create/${this.taskGroupId}`}>*/}
+                            {/*    CreateNewTask()*/}
+                            {/*</a>*/}
+                        </div>
+                        <div className='TasksContainer'>
+                            {
+                                this.state.tasks.length >= 1 ?
+                                    this.state.tasks.map((task) => {
+                                        return (
+                                            <TaskContainerComponent taskData={task} />
+                                        )
+                                    })
+                                    :
+                                    <div id="noTasks" className="container">
+                                        <p className='pageText ps-5'>Tasks do not exist for this group.</p>
+                                    </div>
+                            }
+                        </div>
+                        <div className="task-input">
+                            <input type="text" id="tasksInput"
+                                onChange={(e) => this.setState({ 'value': e.target.value })}
+                            />
+                            <span onClick={() => this.createTask()} className="addBtn">Add</span>
+                        </div>
+                        
+                    </form>
                 </div>
 
                 <div className="container-fluid mt-3">
@@ -119,18 +160,13 @@ export class Tasks extends Component {
                     </button>
                 </div>
 
-                <div id="myDIV" className="task-input">
-                    <input type="text" id="myInput"
-                        onChange={(e) => this.setState({ 'value': e.target.value })}
-                    />
-                    <span onClick={() => this.createTask()} className="addBtn">Add</span>
-                </div>
+               
 
-                <ul id="tasks-list">
-                </ul>
+                {/*<ul id="tasks-list">*/}
+                {/*</ul>*/}
 
-                <ul id="remove-li">
-                </ul>
+                {/*<ul id="remove-li">*/}
+                {/*</ul>*/}
 
                 <div id="snackbar">Еnter text in the input field</div>
             </div>

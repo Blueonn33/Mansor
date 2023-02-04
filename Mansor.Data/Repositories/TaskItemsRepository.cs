@@ -18,5 +18,10 @@ namespace Mansor.Data.Repositories
         {
             return await Entities.FirstOrDefaultAsync(t => t.Value == value);
         }
+
+        public async Task<IEnumerable<TaskItem>> GetTaskItemsByTaskGroupId(int taskGroupId)
+        {
+            return await Entities.Include(t => t.TaskGroup).Where(t => t.TaskGroupId == taskGroupId).ToListAsync();
+        }
     }
 }
