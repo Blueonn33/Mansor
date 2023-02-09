@@ -1,22 +1,37 @@
+using Mansor.Data;
+using Mansor.Data.Models;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI;
+using System.Text.Json.Serialization;
+using Mansor.Data.Repositories.Interfaces;
+using Mansor.Business.Services;
+using Mansor.Business.Services.Interfaces;
+using Mansor.Data.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Services.AddRazorPages();
 
-builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<ITaskGroupsRepository, TaskGroupsRepository>();
+builder.Services.AddScoped<ITaskGroupsService, TaskGroupsService>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+app.UseAuthorization();
 app.UseRouting();
-
+app.MapRazorPages();
 
 app.MapControllerRoute(
     name: "default",
