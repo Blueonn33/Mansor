@@ -1,0 +1,12 @@
+C:\Users\marti\Desktop\Mansor-official\Mansor\Mansor.Data\bin\Debug\net6.0\Mansor.Data.deps.json
+C:\Users\marti\Desktop\Mansor-official\Mansor\Mansor.Data\bin\Debug\net6.0\Mansor.Data.dll
+C:\Users\marti\Desktop\Mansor-official\Mansor\Mansor.Data\bin\Debug\net6.0\Mansor.Data.pdb
+C:\Users\marti\Desktop\Mansor-official\Mansor\Mansor.Data\obj\Debug\net6.0\Mansor.Data.csproj.AssemblyReference.cache
+C:\Users\marti\Desktop\Mansor-official\Mansor\Mansor.Data\obj\Debug\net6.0\Mansor.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\marti\Desktop\Mansor-official\Mansor\Mansor.Data\obj\Debug\net6.0\Mansor.Data.AssemblyInfoInputs.cache
+C:\Users\marti\Desktop\Mansor-official\Mansor\Mansor.Data\obj\Debug\net6.0\Mansor.Data.AssemblyInfo.cs
+C:\Users\marti\Desktop\Mansor-official\Mansor\Mansor.Data\obj\Debug\net6.0\Mansor.Data.csproj.CoreCompileInputs.cache
+C:\Users\marti\Desktop\Mansor-official\Mansor\Mansor.Data\obj\Debug\net6.0\Mansor.Data.dll
+C:\Users\marti\Desktop\Mansor-official\Mansor\Mansor.Data\obj\Debug\net6.0\refint\Mansor.Data.dll
+C:\Users\marti\Desktop\Mansor-official\Mansor\Mansor.Data\obj\Debug\net6.0\Mansor.Data.pdb
+C:\Users\marti\Desktop\Mansor-official\Mansor\Mansor.Data\obj\Debug\net6.0\ref\Mansor.Data.dll
