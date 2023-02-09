@@ -42,7 +42,7 @@ namespace Mansor.Business.Services
                 await _taskGroupsRepository.UpdateAsync(group);
                 return group;
             }
-            return null;
+            return null; 
         }
 
         public async Task<TaskGroup> CreateTaskGroup(TaskGroup taskGroup)
