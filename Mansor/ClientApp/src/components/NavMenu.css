@@ -8,10 +8,6 @@ html {
     font-size: 14px;
 }
 
-#brand {
-    color: #424242;
-}
-
 @media (min-width: 768px) {
     html {
         font-size: 16px;
@@ -24,7 +20,6 @@ html {
     height: auto;
     left: 0px;
     right: 0px;
-    /*margin-top: -80px;*/
 }
 
 .logo-img {
@@ -38,9 +33,23 @@ html {
 }
 
 #btn-login {
+    position: absolute;
+    bottom: 0px;
+}
+
+#btn-groups {
+    position: absolute;
+    bottom: 0px;
+    margin-left: 8%;
+}
+
+#btn-groups:hover {
+    background-color: #D4B170;
+    color: black;
 }
 
 #brand {
     font-size: 35px;
     margin-right: 45%;
+    color: #424242;
 }

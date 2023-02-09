@@ -117,18 +117,12 @@ export class Tasks extends Component {
                         
                         <div className='tasksGroupNameWrapper d-flex'>
                             <h4 className='tasksGroupName'>Daily</h4>
-                            {/*<div>*/}
-                            {/*    <button type="button" className="groups">Groups</button>*/}
-                            {/*</div>*/}
                             <div>
                                 <AddTaskGroup />
                             </div>
 
                         </div>
                         <div className="container">
-                            {/*<a className="link_orange ps-5" data-bs-toggle="" href={`https://localhost:44494/create/${this.taskGroupId}`}>*/}
-                            {/*    CreateNewTask()*/}
-                            {/*</a>*/}
                         </div>
                         <div className='TasksContainer'>
                             {

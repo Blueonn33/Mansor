@@ -1,11 +1,11 @@
 ﻿.tasksContainer {
-    background-color: white;
+    background-color: red;
     position: absolute;
     top: 4.8rem;
     border-top-left-radius: 5%;
     border-bottom-right-radius: 5%;
     width: 60rem;
-    height: -webkit-fill-available;
+    height: max-content;
     padding-bottom: 10vh;
     margin-bottom: 70px;
 }

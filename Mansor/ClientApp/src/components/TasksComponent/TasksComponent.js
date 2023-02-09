@@ -1,8 +1,9 @@
 ﻿import React, { Component } from 'react';
 import { endpoints } from '../../endpoints';
 import TaskContainerComponent from './TaskContainerComponent';
+import './Styles/TasksStyles.css';
 
-export default class TaksComponent extends Component {
+export default class TasksComponent extends Component {
     constructor(props) {
         super(props)
         this.state = { tasks: [] }
@@ -16,7 +17,7 @@ export default class TaksComponent extends Component {
     async loadTasks(taskGroupId) {
         let splittedURL = window.location.pathname.split('/')
         taskGroupId = splittedURL[splittedURL.length - 1]
-        await fetch(`https://localhost:7286/api/taskItems/${Number(taskGroupId)}`)
+        await fetch(endpoints.loadTasks(taskGroupId))
             .then((res) => res.json())
             .then((res) => this.setState({ tasks: res }))
     }

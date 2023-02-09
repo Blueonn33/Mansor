@@ -1,6 +1,7 @@
 ﻿import React, { Component } from 'react';
 import './AddTaskGroupStyles.css';
 import { endpoints } from "../../endpoints";
+import { Link } from "react-router-dom";
 
 export class AddTaskGroup extends Component {
     constructor(props) {
@@ -66,7 +67,7 @@ export class AddTaskGroup extends Component {
     componentDidMount() {
         this.render();
     }
-    clear() {
+    close() {
         this.setState({ 'value': '' });
         this.setState({ errorMessage: '' });
         this.setState({ textColor: 'gray' })
@@ -75,24 +76,26 @@ export class AddTaskGroup extends Component {
         return (
             <div className="container">
                 <div className="container" id="modal">
-                    <button type="button" id="createTaskGroup" className="btn btn-link" data-bs-toggle="modal" data-bs-target="#addTaskModal">
-                        Groups
+                    <button type="button" id="createTaskGroup" data-bs-toggle="modal" data-bs-target="#addTaskGroupModal">
+                        Group
                     </button>
                 </div>
-                <div className="modal fade" id="addTaskModal" role="dialog">
+                <div className="modal fade" id="addTaskGroupModal" role="dialog">
                     <div className="modal-dialog">
                         <div className="modal-content">
                             <div className="modal-header border-0">
                                 <button type="button" className="close" data-bs-dismiss="modal">&times;</button>
                                 <div className="title">
-                                    <h4 className="modal-title" id="title">Add TaskGroup</h4>
+                                    <h4 className="modal-title" id="title">New group</h4>
+                                    <hr id="line"></hr>
                                 </div>
+                                
                             </div>
                             <div className="modal-body">
                                 <div id="myForm">
                                     <form onSubmit={this.createTaskGroup}>
-                                        <label htmlFor="TaskGroupName" id="label-text">Name:</label>
-                                        <input type="text" name="TaskGroupName" className="form-control" id="name"
+                                        <label htmlFor="taskGroupName" id="label-text">Name:</label>
+                                        <input type="text" name="taskGroupName" className="form-control" id="name"
                                             onChange={(e) => this.setState({ 'value': e.target.value })}
                                             style={{ borderBottomColor: this.state.textColor }}
                                             className={this.state.valid == false ? "form-control name name-error" : "form-control name"}
@@ -101,10 +104,11 @@ export class AddTaskGroup extends Component {
                                             <div id="errorTaskGroup">
                                                 <p style={{ color: this.state.textColor }}>{this.state.errorMessage}</p>
                                             </div>
-                                            <button type="reset" id="close" className="btn btn-link" data-bs-dismiss="modal"
-                                                onClick={() => this.clear()} >Clear
-                                            </button>
-                                            <button type="submit" id="submit" method="post" className="btn" name="addTaskGroup">Add</button>
+                                            {/*<button type="reset" id="close" data-bs-dismiss="modal"*/}
+                                            {/*    onClick={() => this.close()} >Close*/}
+                                            {/*</button>*/}
+                                            <Link to='/tasks' id='close' onClick={() => { this.this.close() }}>Cancel</Link>
+                                            <button type="submit" id="submit" method="post" className="btn">Add</button>
                                         </div>
                                     </form>
                                 </div>

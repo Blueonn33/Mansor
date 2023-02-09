@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Collapse, Container, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import './NavMenu.css';
+import '../custom.css';
 
 export class NavMenu extends Component {
     static displayName = NavMenu.name;
@@ -31,7 +32,15 @@ export class NavMenu extends Component {
 
 
                             <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
+                            {/*<div className="navbar-nav flex-grow">*/}
+                            {/*    <NavItem>*/}
+                            {/*        <NavLink tag={Link} className="text-white" to="/tasks" id="btn-groups">Groups</NavLink>*/}
+                            {/*    </NavItem>*/}
+                            {/*</div>*/}
                             <div className="navbar-nav flex-grow">
+                                <NavItem>
+                                    <NavLink tag={Link} className="text-white" to="/groupsList" id="btn-groups">Groups</NavLink>
+                                </NavItem>
                                 <NavItem>
                                     <NavLink tag={Link} className="text-white" to="/tasks" id="btn-login">Log In</NavLink>
                                 </NavItem>
