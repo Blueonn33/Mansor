@@ -6,6 +6,7 @@ import { Tasks } from './components/Tasks/Tasks';
 import { Layout } from './components/Layout';
 import { Route, Routes } from "react-router-dom";
 import './custom.css';
+import { TaskGroupsComponent } from './components/TaskGroupsComponent/TaskGroupsComponent';
 
 export default class App extends Component {
     static displayName = App.name;
@@ -21,6 +22,7 @@ export default class App extends Component {
                     <Route path='/' element={<LandingPage />} />
                     <Route path='/register' element={<RegisterMenu />} />
                     <Route path='/tasks' element={<Tasks />} />
+                    <Route path='/taskGroups' element={<TaskGroupsComponent />} />
                 </Routes>
             </Layout>
         );
