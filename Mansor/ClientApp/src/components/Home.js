@@ -6,7 +6,16 @@ export class Home extends Component {
 
   render() {
     return (
-      <div>
+        <div>
+            <div>
+                <p>
+                    Tova e sat za ocenka na kartini
+
+                </p>
+                <p>
+                    Tova e sat za ocenka na kartini
+                </p>
+            </div>
       </div>
     );
   }
