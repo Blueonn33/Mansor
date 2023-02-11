@@ -6,7 +6,7 @@ import { Tasks } from './components/Tasks/Tasks';
 import { Layout } from './components/Layout';
 import { Route, Routes } from "react-router-dom";
 import './custom.css';
-import { TaskGroupsComponent } from './components/TaskGroupsComponent/TaskGroupsComponent';
+import TaskGroupsComponent from './components/TaskGroupsComponent/TaskGroupsComponent';
 
 export default class App extends Component {
     static displayName = App.name;
