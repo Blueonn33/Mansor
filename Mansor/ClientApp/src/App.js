@@ -6,7 +6,7 @@ import { Tasks } from './components/Tasks/Tasks';
 import { Layout } from './components/Layout';
 import { Route, Routes } from "react-router-dom";
 import './custom.css';
-import { TaskGroupsComponent } from './components/TaskGroupsComponent/TaskGroupsComponent';
+import TaskGroupsComponent from './components/TaskGroupsComponent/TaskGroupsComponent';
 
 export default class App extends Component {
     static displayName = App.name;
@@ -19,6 +19,7 @@ export default class App extends Component {
                     {/*  const { element, ...rest } = route;*/}
                     {/*  return <Route key={index} {...rest} element={element} />;*/}
                     {/*})}*/}
+
                     <Route path='/' element={<LandingPage />} />
                     <Route path='/register' element={<RegisterMenu />} />
                     <Route path='/tasks' element={<Tasks />} />
