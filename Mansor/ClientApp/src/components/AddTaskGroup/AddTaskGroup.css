@@ -1,0 +1,134 @@
+﻿﻿#addTaskGroupModal {
+    margin-top: 0;
+    position: absolute;
+    width: 500px;
+    height: 250px;
+    left: 230px;
+    top: 50px;
+    background: #B3B3B3;
+    border: 3px solid #b3b3b3;
+    overflow-y: hidden;
+}
+
+#createTaskGroup {
+    font-family: sans-serif;
+    font-size: 20px;
+    background-color: #424242;
+    border: 3px #b3b3b3 solid;
+    color: white;
+    border-radius: 10px;
+    margin-left: 950px;
+    margin-top: -300px;
+    font-size: 20px;
+    padding: 5px 17px 5px 17px;
+}
+
+#createTaskGroup:hover {
+    background-color: #b3b3b3;
+    border: 3px white solid;
+}
+
+#name {
+    margin-left: 100px;
+    margin-top: -35px;
+    border-radius: 10px;
+    background-color: #d9d9d9;
+    width: 337px;
+    margin-bottom: 20px;
+    border-bottom: 5px solid white;
+}
+
+.form-control:focus{
+    border-bottom: 5px solid white;
+}
+
+#errorTaskGroup {
+    margin-top: -63px;
+    margin-right: -370px;
+    font-size: 15px;
+}
+
+.title {
+    background-color: #B3B3B3;
+    margin-left: -70px;
+    margin-right: -20px;
+    width: 1600px;
+    margin-top: -120px;
+    margin-bottom: 30px;
+}
+
+#title {
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 24px;
+    margin-left: 70px;
+    margin-top: 80px;
+}
+
+#line {
+    height: 5px;
+    border-width: 0;
+    color: black;
+    background-color: black;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+#submit {
+    font-size: 20px;
+    line-height: 27px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+    height: 36px;
+    margin-top: -15px !important;
+}
+
+#submit:hover {
+    text-decoration-line: underline;
+}
+
+#close {
+    width: 160px;
+    height: 47px;
+    font-size: 20px;
+    margin-left: 44%;
+    border: none;
+    background-color: #b3b3b3;
+    margin-right: -11%;
+    text-decoration-line: none;
+    color: black !important;
+}
+
+#close:hover {
+    text-decoration-line: underline;
+}
+
+#label-text {
+    margin-top: -350px;
+    margin-left: -360px;
+    margin-right: 0px;
+}
+
+.modal-header {
+    border-bottom: 0 none;
+    background-color: #B3B3B3;
+}
+
+.modal-footer {
+    border-top: 0 none;
+    background-color: #B3B3B3;
+}
+
+.modal-dialog {
+    background-color: #B3B3B3;
+}
+
+.modal-content {
+    background-color: #B3B3B3;
+}
+
+.close {
+    display: none;
+}

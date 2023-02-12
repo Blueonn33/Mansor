@@ -43,10 +43,10 @@ html {
     margin-left: 8%;
 }
 
-    #btn-groups:hover {
-        background-color: #D4B170;
-        color: black;
-    }
+#btn-groups:hover {
+    background-color: #D4B170;
+    color: black;
+}
 
 #brand {
     font-size: 35px;

@@ -19,6 +19,7 @@ export default class App extends Component {
                     {/*  const { element, ...rest } = route;*/}
                     {/*  return <Route key={index} {...rest} element={element} />;*/}
                     {/*})}*/}
+
                     <Route path='/' element={<LandingPage />} />
                     <Route path='/register' element={<RegisterMenu />} />
                     <Route path='/tasks' element={<Tasks />} />

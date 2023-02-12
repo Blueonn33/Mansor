@@ -30,20 +30,8 @@
     color: #0080ae;
 }
 
-/*.CreateNewTenantButtonWrapper .CreateNewTenantButton {
-    color: #F28627;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 27.24px;
-    margin-left: 2rem;
-    border-bottom-style: solid;
-    border-bottom-color: #f28627cb;
-    border-bottom-width: 1px;
-    cursor: pointer;
-}
-
-.CreateNewTenantButtonWrapper {
-    margin-top: 0.8125rem;
+.createNewTaskGroupButtonWrapper {
+    margin-top: -2.8rem;
     margin-bottom: 0.8125rem;
     margin-left: 1rem;
-}*/
+}

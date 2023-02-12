@@ -28,8 +28,6 @@ export class NavMenu extends Component {
                     <Container>
 
                         <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!this.state.collapsed} navbar>
-
-
                             <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
                             <div className="navbar-nav flex-grow">
                                 <NavItem>

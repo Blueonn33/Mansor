@@ -1,5 +1,6 @@
 ﻿import React, { Component } from 'react'
 import { endpoints } from '../../endpoints';
+import { AddTaskGroup } from '../AddTaskGroup/AddTaskGroup';
 import '../TaskGroupsComponent/TaskGroupsComponent.css';
 import TaskGroupsContainer from '../TaskGroupsContainer/TaskGroupsContainer';
 
@@ -27,9 +28,9 @@ export default class TaskGroupsComponent extends Component {
                         <div className='taskGroupsListHeaderWrapper d-flex'>
                             <h4 className='taskGroupsListHeader'>Groups</h4>
                         </div>
-                        {/*<div className='CreateNewTenantButtonWrapper'>*/}
-                        {/*    <AddTenant onTenantAdded={this.loadTenants} />*/}
-                        {/*</div>*/}
+                        <div className='createNewTaskGroupButtonWrapper'>
+                            <AddTaskGroup onTaskGroupAdded={this.loadTaskGroups} />
+                        </div>
                         <div className='taskGroupsContainer'>
                             {this.state.taskGroups.map((taskGroup) => {
                                 return (
