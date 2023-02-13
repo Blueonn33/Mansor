@@ -18,6 +18,8 @@ export class AddTaskGroup extends Component {
         event.preventDefault();
         console.log(this.state.value);
         var input = this.state.value;
+        let userId = this.props.location.pathname.split('/')[1]
+
         const errors = {
             success: "Successfully added a new group.",
             minLength: "Name must be at least 3 characters.",
@@ -38,7 +40,7 @@ export class AddTaskGroup extends Component {
             this.setState({ textColor: color.error });
         }
         else {
-            fetch(endpoints.createTaskGroup(), {
+            fetch(endpoints.createTaskGroup(userId), {
                 method: 'POST',
                 mode: 'no-cors',
                 headers: {
@@ -46,7 +48,7 @@ export class AddTaskGroup extends Component {
                 },
                 body: JSON.stringify({
                     "Name": input,
-                    "UserId": 1
+                    "UserId": userId
                 })
             })
                 .then((response) => {
@@ -106,7 +108,8 @@ export class AddTaskGroup extends Component {
                                                     {this.state.errorMessage}</p>
                                             </div>
                                             <Link to='/taskGroups' id='close' onClick={() => { this.this.close() }}>Cancel</Link>
-                                            <button type="submit" id="submit" method="post" className="btn">Add</button>
+                                            <button type="submit" id="submit" method="post" className="btn"
+                                                onClick={(userId) => this.createTaskGroup(userId)}>Add</button>
                                         </div>
                                     </form>
                                 </div>

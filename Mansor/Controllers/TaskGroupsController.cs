@@ -1,5 +1,6 @@
 ﻿using Mansor.Business.Services.Interfaces;
 using Mansor.Data.Models;
+using Mansor.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Mansor.Controllers
@@ -8,12 +9,14 @@ namespace Mansor.Controllers
     public class TaskGroupsController : ControllerBase
     {
         private readonly ITaskGroupsService _taskGroupsService;
+        private readonly IUsersService _usersService;
+
         public TaskGroupsController(ITaskGroupsService taskGroupsService)
         {
             _taskGroupsService = taskGroupsService;
         }
         [HttpGet]
-        [Route("api/taskGroupsList")]
+        [Route("api/taskGroups")]
         public async Task<IEnumerable<TaskGroup>> GetAllTaskGroups()
         {
             return await _taskGroupsService.GetTaskGroupsAsync();
@@ -32,18 +35,23 @@ namespace Mansor.Controllers
         }
 
         [HttpPost]
-        [Route("api/taskGroup/create")]
-        public async Task<IActionResult> CreateTaskGroup([FromBody] TaskGroup createTaskGroup)
+        [Route("api/taskGroup/create/{userId}")]
+        public async Task<IActionResult> CreateTaskGroup([FromRoute] int userId, [FromBody] TaskGroupRequestModel taskGroupRequestModel)
         {
-            var taskGroup = await _taskGroupsService.GetTaskGroupByNameAsync(createTaskGroup.Name);
+            var user = await _usersService.GetUserByIdAsync(userId);
 
-            if (taskGroup != null)
+            var taskGroup = taskGroupRequestModel.ToCreateTaskGroup(user);
+            var result = await _taskGroupsService.CreateTaskGroup(taskGroup);
+
+            if (result == null)
             {
                 return BadRequest("The group already exists");
             }
+            else
+            {
+                return Ok(result);
+            }
 
-            await _taskGroupsService.AddTaskGroupAsync(createTaskGroup);
-            return Ok(createTaskGroup);
         }
     }
 }
