@@ -13,7 +13,7 @@ namespace Mansor.Controllers
             _taskGroupsService = taskGroupsService;
         }
         [HttpGet]
-        [Route("api/taskGroupsList")]
+        [Route("api/taskGroups")]
         public async Task<IEnumerable<TaskGroup>> GetAllTaskGroups()
         {
             return await _taskGroupsService.GetTaskGroupsAsync();
