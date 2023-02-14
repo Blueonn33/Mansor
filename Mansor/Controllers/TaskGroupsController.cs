@@ -19,6 +19,7 @@ namespace Mansor.Controllers
         [Route("api/taskGroups")]
         public async Task<IEnumerable<TaskGroup>> GetAllTaskGroups()
         {
+            Response.Headers.Add("Access-Control-Allow-Origin", "*");
             return await _taskGroupsService.GetTaskGroupsAsync();
         }
 

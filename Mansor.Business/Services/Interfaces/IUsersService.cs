@@ -12,5 +12,6 @@ namespace Mansor.Business.Services.Interfaces
         Task<IEnumerable<User>> GetUserAsync();
         Task<User?> GetUserByIdAsync(int id);
         Task<User> AddUser(User user);
+        Task<string> GetCurrentUserId();
     }
 }

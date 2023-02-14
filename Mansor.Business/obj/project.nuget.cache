@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "NQaMP95/vHAugxmVo39X0Is2jxDI4Mj9lYRAoDZ2UHG3wUzbrmTPmLLmXnshgRtoHIBqSE/xLb8gVcfflROYrA==",
+  "dgSpecHash": "KFeUyiUxG6fhalDxfnNeq7Z115cuEEagOznQ+hMKQQ7wDrOwjXvsr2i+nGHyCDMkUFZ2XWF0SrN1mz+j+OvzmQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\marti\\Desktop\\Mansor-official\\Mansor\\Mansor.Business\\Mansor.Business.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\marti\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\marti\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "C:\\Users\\marti\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\marti\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\marti\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
@@ -43,6 +45,7 @@
     "C:\\Users\\marti\\.nuget\\packages\\system.security.permissions\\4.7.0\\system.security.permissions.4.7.0.nupkg.sha512",
     "C:\\Users\\marti\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
     "C:\\Users\\marti\\.nuget\\packages\\system.text.encoding.codepages\\4.7.0\\system.text.encoding.codepages.4.7.0.nupkg.sha512",
+    "C:\\Users\\marti\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512",
     "C:\\Users\\marti\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
   ],
   "logs": []

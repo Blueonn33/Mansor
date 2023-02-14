@@ -14,11 +14,11 @@ export class AddTaskGroup extends Component {
         this.createTaskGroup = this.createTaskGroup.bind(this);
         this.handleChange = this.handleChange.bind(this);
     }
-    createTaskGroup = (event) => {
+    async createTaskGroup(event){
         event.preventDefault();
         console.log(this.state.value);
         var input = this.state.value;
-        let userId = this.props.location.pathname.split('/')[1]
+        //let userId = this.props.location.pathname.split('/')[1]
 
         const errors = {
             success: "Successfully added a new group.",
@@ -40,15 +40,16 @@ export class AddTaskGroup extends Component {
             this.setState({ textColor: color.error });
         }
         else {
-            fetch(endpoints.createTaskGroup(userId), {
+            await fetch(endpoints.createTaskGroup(), {
                 method: 'POST',
                 mode: 'no-cors',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Credentials': true
                 },
                 body: JSON.stringify({
                     "Name": input,
-                    "UserId": userId
+                    "UserId": 1
                 })
             })
                 .then((response) => {
