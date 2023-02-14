@@ -6,28 +6,26 @@
     height: max-content;
     padding-bottom: 10vh;
     margin-bottom: 70px;
-    background-color: red !important;
+    background-color: #424242 !important;
 }
-
+.taskGroupsContainers{
+    margin-top: 30px;
+    /*margin-left: -950px;*/
+    font-size: 20px;
+    margin-right: 10px;
+    text-align: left;
+}
 .taskGroupsListHeaderWrapper {
-    background-color: blue;
+    background-color: #424242;
     color: white;
     margin-top: 20px;
     height: max-content;
 }
 
 .taskGroupsListHeader {
-    padding-top: 0.55rem;
+    margin-top: -2rem;
     font-weight: 700;
-    font-size: 33px;
-}
-
-.taskGroupsListEditButton {
-    font-size: 2rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    margin-left: 52.3rem;
-    color: #0080ae;
+    font-size: 50px;
 }
 
 .createNewTaskGroupButtonWrapper {

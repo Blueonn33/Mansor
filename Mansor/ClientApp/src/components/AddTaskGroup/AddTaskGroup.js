@@ -14,10 +14,12 @@ export class AddTaskGroup extends Component {
         this.createTaskGroup = this.createTaskGroup.bind(this);
         this.handleChange = this.handleChange.bind(this);
     }
-    createTaskGroup = (event) => {
+    async createTaskGroup(event){
         event.preventDefault();
         console.log(this.state.value);
         var input = this.state.value;
+        //let userId = this.props.location.pathname.split('/')[1]
+
         const errors = {
             success: "Successfully added a new group.",
             minLength: "Name must be at least 3 characters.",
@@ -38,11 +40,12 @@ export class AddTaskGroup extends Component {
             this.setState({ textColor: color.error });
         }
         else {
-            fetch(endpoints.createTaskGroup(), {
+            await fetch(endpoints.createTaskGroup(), {
                 method: 'POST',
                 mode: 'no-cors',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Credentials': true
                 },
                 body: JSON.stringify({
                     "Name": input,
@@ -106,7 +109,8 @@ export class AddTaskGroup extends Component {
                                                     {this.state.errorMessage}</p>
                                             </div>
                                             <Link to='/taskGroups' id='close' onClick={() => { this.this.close() }}>Cancel</Link>
-                                            <button type="submit" id="submit" method="post" className="btn">Add</button>
+                                            <button type="submit" id="submit" method="post" className="btn"
+                                                onClick={(userId) => this.createTaskGroup(userId)}>Add</button>
                                         </div>
                                     </form>
                                 </div>
