@@ -22,12 +22,12 @@ export default class TaskGroupsComponent extends Component {
             .then(data => {
                 data.forEach(record => {
                     console.log(record.name);
-                    document.getElementsByClassName('taskGroupsContainers')[0].innerHTML += `<p className="taskRecords">${record.name}</p>`;
+                    document.getElementsByClassName('taskGroupsContainers')[0].innerHTML += `<p class="groupElements">${record.name}</p>`;
                 });
             })
             .catch(error => console.error(error));
-
     }
+
     render() {
         return (
             <div className='taskGroupsListWrapper d-flex justify-content-center align-items-center'>
@@ -37,14 +37,15 @@ export default class TaskGroupsComponent extends Component {
                             <h4 className='taskGroupsListHeader'>Groups</h4>
                         </div>
                         <div className='createNewTaskGroupButtonWrapper'>
-                            <AddTaskGroup onTaskGroupAdded={this.loadTaskGroups} />
+                            {/*onTaskGroupAdded={this.loadTaskGroups}*/}
+                            <AddTaskGroup />
                         </div>
                         <div className='taskGroupsContainers'>
-                            {this.state.taskGroups.map((taskGroup) => {
-                                return (
-                                    <TaskGroupsContainer taskGroupData={taskGroup} key={taskGroup.id} />
-                                )
-                            })}
+                            {/*{this.state.taskGroups.map((taskGroup) => {*/}
+                            {/*    return (*/}
+                            {/*        <TaskGroupsContainer taskGroupData={taskGroup} key={taskGroup.id} />*/}
+                            {/*    )*/}
+                            {/*})}*/}
                         </div>
                     </div>
                 </div>

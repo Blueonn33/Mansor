@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+ import React, { Component } from 'react';
 import AppRoutes from './AppRoutes';
 import { RegisterMenu } from './components/api-authorization/RegisterMenu';
 import { LandingPage } from './components/LandingPage/LandingPage';

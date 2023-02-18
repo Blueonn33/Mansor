@@ -36,22 +36,32 @@ namespace Mansor.Controllers
         }
 
         [HttpPost]
-        [Route("api/taskGroup/create/{userId}")]
-        public async Task<IActionResult> CreateTaskGroup([FromRoute] int userId, [FromBody] TaskGroupRequestModel taskGroupRequestModel)
+        [Route("api/taskGroup/create")]
+        public async Task<IActionResult> CreateTaskGroup([FromBody] TaskGroup createTaskGroup)
         {
-            var user = await _usersService.GetUserByIdAsync(userId);
+            //var user = await _usersService.GetUserByIdAsync(userId);
 
-            var taskGroup = taskGroupRequestModel.ToCreateTaskGroup(user);
-            var result = await _taskGroupsService.CreateTaskGroup(taskGroup);
+            //var taskGroup = taskGroupRequestModel.ToCreateTaskGroup(user);
+            //var result = await _taskGroupsService.CreateTaskGroup(taskGroup);
 
-            if (result == null)
+            //if (result == null)
+            //{
+            //    return BadRequest("The group already exists");
+            //}
+            //else
+            //{
+            //    return Ok(result);
+            //}
+
+            var taskGroup = await _taskGroupsService.GetTaskGroupByNameAsync(createTaskGroup.Name);
+
+            if (taskGroup != null)
             {
                 return BadRequest("The group already exists");
             }
-            else
-            {
-                return Ok(result);
-            }
+
+            await _taskGroupsService.AddTaskGroupAsync(createTaskGroup);
+            return Ok(createTaskGroup);
 
         }
     }
