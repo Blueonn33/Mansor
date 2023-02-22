@@ -1,4 +1,4 @@
- import React, { Component } from 'react';
+import React, { Component } from 'react';
 import AppRoutes from './AppRoutes';
 import { RegisterMenu } from './components/api-authorization/RegisterMenu';
 import { LandingPage } from './components/LandingPage/LandingPage';
@@ -22,7 +22,7 @@ export default class App extends Component {
 
                     <Route path='/' element={<LandingPage />} />
                     <Route path='/register' element={<RegisterMenu />} />
-                    <Route path='/tasks' element={<Tasks />} />
+                    <Route path='/tasks/:id' element={<Tasks />} />
                     <Route path='/taskGroups' element={<TaskGroupsComponent />} />
                 </Routes>
             </Layout>

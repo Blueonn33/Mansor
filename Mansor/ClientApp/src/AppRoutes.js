@@ -28,7 +28,7 @@ const AppRoutes = [
         element: <RegisterMenu />
     },
     {
-        path: '/tasks',
+        path: '/tasks/:id',
         element: <Tasks />
     },
     {

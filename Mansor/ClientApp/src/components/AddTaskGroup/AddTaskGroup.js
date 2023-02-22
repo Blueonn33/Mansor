@@ -39,94 +39,32 @@ export class AddTaskGroup extends Component {
             this.setState({ textColor: color.error });
         }
         else {
-            //await fetch(endpoints.createTaskGroup(), {
-            //    method: 'POST',
-            //    mode: 'no-cors',
-            //    headers: {
-            //        'Content-Type': 'application/json',
-            //        'Access-Control-Allow-Credentials': true
-            //    },
-            //    body: JSON.stringify({
-            //        "Name": input,
-            //        "UserId": 1
-            //    })
-            //})
-            //fetch('https://localhost:7286/api/taskGroup/create', {
-            //    method: 'POST',
-            //    mode: 'no-cors',
-            //    credentials: 'include',
-            //    headers: {
-            //        'Accept': 'application/json',
-            //        'Content-Type': 'application/json',
-            //        'Access-Control-Allow-Origin': '*',
-            //        'Access-Control-Allow-Methods': 'POST',
-            //    },
-            //    body: JSON.stringify({
-            //        "name": "React",
-            //        "userId": 1
-            //    })
-            //})
             let url = endpoints.createTaskGroup();
-            const data = {
-                name: input,
-                userId: 1
-            }
 
-            //fetch('https://localhost:7286/api/taskGroup/create', {
-            //    method: "post",
-            //    mode: 'no-cors',
-            //    headers: {
-            //        'Accept': 'application/json',
-            //        'Content-Type': 'application/json'
-            //    },
-
-            //    //make sure to serialize your JSON body
-            //    body: JSON.stringify(data)
-            //})
-
-            //    //.then(response => response.json())
-            //    //.then(response => console.log(JSON.stringify(response)))
-            //    //this.postData(url, {
-            //    //    "name": input,
-            //    //    "userId": 1
-            //    //})
-            //    .then((response) => {
-            //        if (response.status == 400) {
-            //            this.setState({ errorMessage: errors.existingTaskGroup });
-            //            this.setState({ textColor: color.error });
-            //        }
-            //        else {
-            //            this.setState({ errorMessage: errors.success });
-            //            this.setState({ textColor: color.success });
-            //            //this.props.onTaskGroupAdded(this.props.value);
-            //        }
-            //    });
-
-            const xhr = new XMLHttpRequest();
-            xhr.open('POST', url, true);
-            xhr.setRequestHeader('Content-Type', 'application/json');
-            xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
-            xhr.setRequestHeader('mode', 'no-cors');
-            xhr.onreadystatechange = function () {
-                if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-                    const response = JSON.parse(xhr.responseText);
-                    console.log(response);
-                }
-            };
-            xhr.send(JSON.stringify(data));
+            await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Credentials': true
+                },
+                body: JSON.stringify({
+                    "name": input,
+                    "userId": 1
+                })
+            })
+                .then((response) => {
+                    if (response.status == 400) {
+                        this.setState({ errorMessage: errors.existingTaskGroup });
+                        this.setState({ textColor: color.error });
+                    }
+                    else {
+                        this.setState({ errorMessage: errors.success });
+                        this.setState({ textColor: color.success });
+                        this.props.onTaskGroupAdded(this.props.value);
+                    }
+                });
         }
     }
-    //postData(url, data) {
-    //    return fetch(url, {
-    //        method: 'POST',
-    //        headers: {
-    //            'Content-Type': 'application/json',
-    //        },
-    //        body: JSON.stringify(data)
-    //    })
-    //        .then(response => response.json())
-    //        .catch(error => console.error(error));
-    //}
     handleChange(event) {
         this.setState({ value: event.target.value });
     }

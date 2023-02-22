@@ -2,6 +2,18 @@
 using Mansor.Data.Models;
 using Mansor.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using System.Collections;
+using System.Linq;
+using Mansor.Data;
+using Mansor.Data.Repositories;
+using Mansor.Business.Services.Interfaces;
+using System.Drawing.Text;
+using System.Net;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.AspNetCore.Cors;
 
 namespace Mansor.Controllers
 {
@@ -9,7 +21,6 @@ namespace Mansor.Controllers
     public class TaskGroupsController : ControllerBase
     {
         private readonly ITaskGroupsService _taskGroupsService;
-        private readonly IUsersService _usersService;
 
         public TaskGroupsController(ITaskGroupsService taskGroupsService)
         {
@@ -52,7 +63,7 @@ namespace Mansor.Controllers
             //{
             //    return Ok(result);
             //}
-
+            Response.Headers.Add("Access-Control-Allow-Origin", "*");
             var taskGroup = await _taskGroupsService.GetTaskGroupByNameAsync(createTaskGroup.Name);
 
             if (taskGroup != null)

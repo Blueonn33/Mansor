@@ -45,7 +45,7 @@ export class LandingPage extends Component {
                             </article>
                         </div>
                     </div>
-                    <ul className="d-flex mb-3">
+                    <ul className="functionalities d-flex mb-3">
                         <li className="option p-2 flex-fill" id="task"
                             onClick={() => this.showImg("modal-tasks", "tasksImg", "modal-table", "modal-notes")}>
                         Tasks</li>

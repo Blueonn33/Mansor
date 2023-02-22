@@ -22,7 +22,7 @@ export class RegisterMenu extends Component {
                             </label>
                         </div>
                     <div>
-                        <button id="btn-registerForm">Register</button>
+                        <button id="btn-registerForm" type="submit">Register</button>
                     </div>
                     <div>
                         <button id="btn-cancel">

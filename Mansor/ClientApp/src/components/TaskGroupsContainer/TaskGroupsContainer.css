@@ -8,9 +8,8 @@
     margin-top: 1rem;
 }
 
-.taskGroupsContainer .taskGroupsNameWrapper .taskGroupName {
+.taskGroupsContainer .taskGroupNameWrapper .taskGroupName {
     margin-left: 1.125rem;
-    color: black;
 }
 
 .taskGroupsContainer .taskGroupsNameWrapper {
@@ -19,39 +18,38 @@
     margin-top: 0.3rem;
 }
 
-.manageTaskGroupButtonWrapper {
+.useTaskGroupButtonWrapper {
     margin-left: auto;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
 }
 
-.manageTaskGroupButtonWrapper .manageButton {
-    background-color: #0084B4;
+.useTaskGroupButtonWrapper .useButton {
+    font-family: sans-serif;
+    background-color: #424242;
+    border: 3px #b3b3b3 solid;
     color: white;
-    border-style: none;
-    font-weight: 700;
-    font-size: 20px;
-    border-radius: 20px;
-    width: 7.85rem;
-    height: 2.25rem;
+    border-radius: 10px;
     margin-right: 1rem;
+    font-size: 15px;
+    padding: 5px 10px 5px 10px;
 }
 
-.manageTaskGroupButtonWrapper .manageButton:hover {
-    background-color: #0080ae;
-    color: #F3F3F3;
+.useTaskGroupButtonWrapper .useButton:hover {
+    background-color: #b3b3b3;
+    border: 3px white solid;
 }
 
-.managetaskGroupButtonWrapper .manageButton:active {
+.useTaskGroupButtonWrapper .useButton:active {
     color: #e7e6e6;
 }
 
-.manageButtonText {
+.useButtonText {
     color: white;
     text-decoration: none;
 }
 
-.manageButtonText:hover {
+.useButtonText:hover {
     color: white;
     text-decoration: none;
 }

@@ -14,17 +14,29 @@ export default class TaskGroupsComponent extends Component {
     async componentDidMount() {
         this.loadTaskGroups();
     }
+    //async loadTaskGroups() {
+    //    let url = endpoints.loadTaskGroups();
+
+    //    fetch(url)
+    //        .then(response => response.json())
+            //.then(data => {
+            //    data.forEach(record => {
+            //        console.log(record.name);
+            //        const container = document.getElementsByClassName('taskGroupsContainers')[0];
+            //        container.innerHTML += `<p class="groupElements">${record.name}</p>`;
+            //        container.innerHTML += '<button class="btn-groups"></button>';
+
+            //        //container.forEach(this.addButton)
+            //    });
+            //})
+    //        .catch(error => console.error(error));
+    //}
+
     async loadTaskGroups() {
         let url = endpoints.loadTaskGroups();
-
         fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                data.forEach(record => {
-                    console.log(record.name);
-                    document.getElementsByClassName('taskGroupsContainers')[0].innerHTML += `<p class="groupElements">${record.name}</p>`;
-                });
-            })
+            .then((res) => res.json())
+            .then((res) => this.setState({ taskGroups: res }))
             .catch(error => console.error(error));
     }
 
@@ -37,17 +49,17 @@ export default class TaskGroupsComponent extends Component {
                             <h4 className='taskGroupsListHeader'>Groups</h4>
                         </div>
                         <div className='createNewTaskGroupButtonWrapper'>
-                            {/*onTaskGroupAdded={this.loadTaskGroups}*/}
-                            <AddTaskGroup />
+                            <AddTaskGroup onTaskGroupAdded={this.loadTaskGroups} />
                         </div>
                         <div className='taskGroupsContainers'>
-                            {/*{this.state.taskGroups.map((taskGroup) => {*/}
-                            {/*    return (*/}
-                            {/*        <TaskGroupsContainer taskGroupData={taskGroup} key={taskGroup.id} />*/}
-                            {/*    )*/}
-                            {/*})}*/}
+                            {this.state.taskGroups.map((taskGroup) => {
+                                return (
+                                    <TaskGroupsContainer taskGroupData={taskGroup} key={taskGroup.id} />
+                                )
+                            })}
                         </div>
                     </div>
+                    {/*<button className="btn-groups"></button>*/}
                 </div>
             </div>
 
