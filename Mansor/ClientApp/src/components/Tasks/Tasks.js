@@ -4,15 +4,84 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.js';
 import 'bootstrap/dist/css/bootstrap.css';
 import { FaBars } from "react-icons/fa";
+import { endpoints } from '../../endpoints';
 
 export class Tasks extends Component {
     static displayName = Tasks.name;
+
+    constructor() {
+        super()
+        this.state = {
+            currentTaskGroupName: '',
+            taskGroupData: undefined,
+            taskGroupHeaderName: '',
+            task: ''
+        }
+        this.createTask = this.createTask.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+    }
 
     invalidInput() {
         var msg = document.getElementById("snackbar");
         msg.className = "show";
         setTimeout(function () { msg.className = msg.className.replace("show", ""); }, 3000);
     }
+
+    getTaskGroupName = async (taskGroupId) => {
+        let splittedURL = window.location.pathname.split('/')
+        taskGroupId = splittedURL[splittedURL.length - 1]
+        await fetch(endpoints.getTaskGroupName(taskGroupId))
+            .then(async (res) => {
+                let taskGroupData = await res.json()
+                this.setState({ 'taskGroupData': taskGroupData })
+                this.setState({ 'currentTaskGroupName': taskGroupData.name })
+                this.setState({ 'taskGroupHeaderName': taskGroupData.name })
+              }
+            )
+    }
+
+    async createTask(event) {
+        event.preventDefault();
+        console.log(this.state.task);
+        var input = this.state.task;
+
+        if (input === '') {
+            this.invalidInput();
+        }
+        else {
+            await fetch(endpoints.createTask(), {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    //"Name": name,
+                    //"Label": record,
+                    //"TenantId": tenantId
+                })
+            })
+                .then((response) => {
+                    if (response.status == 400) {
+                        //this.setState({ errorMessage: errors.existingTracker });
+                        //this.setState({ textColor: color.error });
+                    }
+                    else {
+                        //this.setState({ errorMessage: errors.success });
+                        //this.setState({ textColor: color.success });
+                    }
+
+                });
+        }
+
+    }
+
+    handleChange(event) {
+        this.setState({ value: event.target.value });
+    }
+
+    componentDidMount = () => {
+        this.getTaskGroupName()
+    } 
 
     useElements = () => {
         //var myNodelist = document.getElementsByTagName("LI");
@@ -89,7 +158,7 @@ export class Tasks extends Component {
                     </div>
                     
                 </div>
-
+                <h4 className='groupName'>{this.state.taskGroupHeaderName}</h4>
                 <div className="container-fluid mt-3">
                     <button className="bar" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas">
                         <FaBars id="bar"/>

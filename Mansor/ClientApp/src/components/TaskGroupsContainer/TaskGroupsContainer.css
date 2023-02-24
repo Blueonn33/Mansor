@@ -1,5 +1,4 @@
 ﻿.taskGroupsContainer {
-    background-color: #F3F3F3;
     font-weight: 400;
     font-size: 20px;
     line-height: 27.24px;
@@ -8,11 +7,35 @@
     margin-top: 1rem;
 }
 
-.taskGroupsContainer .taskGroupNameWrapper .taskGroupName {
+.taskGroupsContainer .taskGroupNameWrapper {
     margin-left: 1.125rem;
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    list-style-type: none;
+    background: #eee;
+    font-size: 18px;
+    transition: 0.2s;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #d9d9d9;
+    color: black;
+    margin-bottom: -30px;
+    font-size: 20px;
+    margin-right: 5px;
+    border: 3px solid #424242;
+    width: 1080px;
+    height: min-content;
 }
 
-.taskGroupsContainer .taskGroupsNameWrapper {
+.taskGroupsContainer .taskGroupNameWrapper:hover{
+    cursor:default;
+    background-color: #b3b3b3;
+}
+
+.taskGroupsContainer .taskGroupsNameWrapper .taskGroup {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     margin-top: 0.3rem;
@@ -32,16 +55,13 @@
     border-radius: 10px;
     margin-right: 1rem;
     font-size: 15px;
-    padding: 5px 10px 5px 10px;
+
+    padding: 2px 10px 2px 10px;
 }
 
 .useTaskGroupButtonWrapper .useButton:hover {
     background-color: #b3b3b3;
     border: 3px white solid;
-}
-
-.useTaskGroupButtonWrapper .useButton:active {
-    color: #e7e6e6;
 }
 
 .useButtonText {

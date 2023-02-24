@@ -14,9 +14,9 @@ export class Footer extends Component {
                 </div>
                 <div id="main-content" className="row">
                     <div>
-                        <a href="https://www.youtube.com/channel/UCdOH10Te0taKiNJA8GJHhvw" className="fa fa-youtube" >
+                        <a href="https://www.youtube.com/channel/UCdOH10Te0taKiNJA8GJHhvw" className="fa fa-footer" >
                             <FaYoutube /></a>
-                        <a href="https://www.instagram.com/mansorwebsite/" className="fa fa-instagram">
+                        <a href="https://www.instagram.com/mansorwebsite/" className="fa fa-footer">
                             <FaInstagram /></a>     
                     </div>
                 </div>

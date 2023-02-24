@@ -40,16 +40,27 @@ html {
 #btn-groups {
     position: absolute;
     bottom: 0px;
-    margin-left: 8%;
+    margin-left: 19%;
 }
 
-    #btn-groups:hover {
-        background-color: #D4B170;
-        color: black;
-    }
+#btn-groups:hover {
+    background-color: #D4B170;
+    color: black;
+}
+
+#btn-notes {
+    position: absolute;
+    bottom: 0px;
+    margin-left: 9.7%;
+}
+
+#btn-notes:hover {
+    background-color: #D4B170;
+    color: black;
+}
 
 #brand {
     font-size: 35px;
-    margin-right: 45%;
+    margin-right: 20%;
     color: #424242;
 }

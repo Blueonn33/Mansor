@@ -50,20 +50,6 @@ namespace Mansor.Controllers
         [Route("api/taskGroup/create")]
         public async Task<IActionResult> CreateTaskGroup([FromBody] TaskGroup createTaskGroup)
         {
-            //var user = await _usersService.GetUserByIdAsync(userId);
-
-            //var taskGroup = taskGroupRequestModel.ToCreateTaskGroup(user);
-            //var result = await _taskGroupsService.CreateTaskGroup(taskGroup);
-
-            //if (result == null)
-            //{
-            //    return BadRequest("The group already exists");
-            //}
-            //else
-            //{
-            //    return Ok(result);
-            //}
-            Response.Headers.Add("Access-Control-Allow-Origin", "*");
             var taskGroup = await _taskGroupsService.GetTaskGroupByNameAsync(createTaskGroup.Name);
 
             if (taskGroup != null)

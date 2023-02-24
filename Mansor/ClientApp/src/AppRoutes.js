@@ -4,6 +4,7 @@ import { Home } from "./components/Home";
 import { LandingPage } from './components/LandingPage/LandingPage'
 import { RegisterMenu } from './components/api-authorization/RegisterMenu';
 import { Tasks } from './components/Tasks/Tasks';
+import { Notes } from './components/Notes/Notes';
 import TaskGroupsComponent from "./components/TaskGroupsComponent/TaskGroupsComponent";
 
 const AppRoutes = [
@@ -34,6 +35,10 @@ const AppRoutes = [
     {
         path: '/taskGroups',
         element: <TaskGroupsComponent />
+    },
+    {
+        path: '/notes',
+        element: <Notes />
     },
 ];
 

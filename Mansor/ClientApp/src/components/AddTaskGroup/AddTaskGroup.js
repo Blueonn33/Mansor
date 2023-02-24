@@ -40,20 +40,21 @@ export class AddTaskGroup extends Component {
         }
         else {
             let url = endpoints.createTaskGroup();
-
             await fetch(url, {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
+                    'Content-type': 'application/json; charset=UTF-8',
                     'Access-Control-Allow-Credentials': true
                 },
                 body: JSON.stringify({
                     "name": input,
-                    "userId": 1
+                    "userId": 1,
+                    "user": null,
+                    "taskItems": null
                 })
             })
                 .then((response) => {
-                    if (response.status == 400) {
+                    if (!response.ok) {
                         this.setState({ errorMessage: errors.existingTaskGroup });
                         this.setState({ textColor: color.error });
                     }
@@ -62,6 +63,10 @@ export class AddTaskGroup extends Component {
                         this.setState({ textColor: color.success });
                         this.props.onTaskGroupAdded(this.props.value);
                     }
+                })
+                .catch(error => {
+                    console.error(error);
+                    // handle error message or display to user
                 });
         }
     }
@@ -98,8 +103,8 @@ export class AddTaskGroup extends Component {
                             <div className="modal-body">
                                 <div id="myForm">
                                     <form onSubmit={this.createTaskGroup}>
-                                        <label htmlFor="taskGroupName" id="label-text">Name:</label>
-                                        <input type="text" name="taskGroupName" className="form-control" id="name"
+                                        <label htmlFor="taskGroupNameField" id="label-text">Name:</label>
+                                        <input type="text" name="taskGroupNameField" className="form-control" id="name"
                                             onChange={(e) => this.setState({ 'value': e.target.value })}
                                             style={{ borderBottomColor: this.state.textColor }}
                                         />

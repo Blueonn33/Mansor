@@ -7,6 +7,7 @@ import { Layout } from './components/Layout';
 import { Route, Routes } from "react-router-dom";
 import './custom.css';
 import TaskGroupsComponent from './components/TaskGroupsComponent/TaskGroupsComponent';
+import { Notes } from './components/Notes/Notes';
 
 export default class App extends Component {
     static displayName = App.name;
@@ -24,6 +25,7 @@ export default class App extends Component {
                     <Route path='/register' element={<RegisterMenu />} />
                     <Route path='/tasks/:id' element={<Tasks />} />
                     <Route path='/taskGroups' element={<TaskGroupsComponent />} />
+                    <Route path='/notes' element={<Notes />} />
                 </Routes>
             </Layout>
         );

@@ -1,19 +1,31 @@
 ﻿body {
     min-width: 400px;
 }
-#bar{
+
+.groupName {
+    background-color: #424242;
+    color: white;
+    margin-top: 130px;
+    height: max-content;
+    margin-left: 42%;
+    font-weight: 700;
+    font-size: 33px;
+}
+
+#bar {
     margin-top: 20vh;
     margin-bottom: 0;
     width: 100px;
     height: 60px;
     padding: 3px;
+    margin-top: -16%;
 }
 
 .bar {
     background-color: #424242;
     border: none;
     margin-left: -6%;
-    margin-top: -2%;
+    margin-top: -16%;
 }
 #offcanvas{
     background-color: #424242;
@@ -129,7 +141,7 @@ ul {
     padding: 10px;
     float: left;
     font-size: 16px;
-    margin-left: 10%;
+    margin-left: 15%;
     border-radius: 10px;
     margin-top: -8%;
     background-color: #B3B3B3;
@@ -147,7 +159,7 @@ ul {
     transition: 0.3s;
     border-radius: 0;
     border-radius: 10px;
-    margin-left: 83%;
+    margin-left: 86%;
     margin-top: -8%;
     background-color: #B3B3B3;
     color: white;

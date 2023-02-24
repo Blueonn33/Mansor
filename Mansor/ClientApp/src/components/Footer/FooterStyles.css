@@ -1,10 +1,10 @@
-﻿.fa {
+﻿.fa-footer {
     color: white;
     font-size: 33px !important;
     margin-right: 10px;
 }
 
-.fa:hover {
+.fa-footer:hover {
     opacity: 0.7;
     color: #D4B170;
 }
