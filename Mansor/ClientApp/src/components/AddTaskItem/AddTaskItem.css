@@ -1,0 +1,173 @@
+﻿body {
+    min-width: 400px;
+}
+
+.groupName {
+    background-color: #424242;
+    color: white;
+    margin-top: 130px;
+    height: max-content;
+    margin-left: 42%;
+    font-weight: 700;
+    font-size: 33px;
+}
+
+#bar {
+    margin-top: 20vh;
+    margin-bottom: 0;
+    width: 100px;
+    height: 60px;
+    padding: 3px;
+    margin-top: -16%;
+}
+
+.bar {
+    background-color: #424242;
+    border: none;
+    margin-left: -6%;
+    margin-top: -16%;
+}
+
+#offcanvas {
+    background-color: #424242;
+}
+
+#line {
+    height: 5px;
+    border-width: 0;
+    color: black;
+    background-color: black;
+}
+/* Include the padding and border in an element's total width and height */
+* {
+    box-sizing: border-box;
+}
+
+/* Remove margins and padding from the list */
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the list items */
+
+#tasks-list {
+    margin-bottom: 20vh;
+}
+
+/* Style the header */
+.task-input {
+    /*background-color: #D4B170;*/
+    padding: 30px 40px;
+    /*color: white;*/
+    text-align: center;
+    width: 1000px;
+    margin-left: 10%;
+    /*margin-bottom: 20vh;*/
+    display: block;
+}
+
+#input-item {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    width: 70%;
+    padding: 10px;
+    float: left;
+    font-size: 16px;
+    border-radius: 10px;
+    margin-top: 7%;
+    background-color: #B3B3B3;
+}
+
+.addBtn {
+    padding: 10px;
+    width: 10%;
+    color: #555;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 0;
+    border-radius: 10px;
+    margin-left: 71%;
+    margin-top: -4.5%;
+    background-color: #B3B3B3;
+    color: white;
+}
+
+.addBtn:hover {
+    background: #D4B170;
+    color: black;
+}
+
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}

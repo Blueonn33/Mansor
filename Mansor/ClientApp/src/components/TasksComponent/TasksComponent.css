@@ -1,1 +1,60 @@
-﻿
+﻿.taskItemsContainer {
+    /*position: absolute;*/
+    top: 8rem;
+    width: 1080px;
+    height: max-content;
+    /*margin-bottom: 70px;*/
+    background-color: #424242 !important;
+    color: white;
+}
+
+.taskItemsContainers {
+    margin-top: 100px;
+    /*margin-left: -950px;*/
+    font-size: 20px;
+    margin-right: 10px;
+    text-align: left;
+}
+
+.taskItemsListHeaderWrapper {
+    background-color: #424242;
+    color: white;
+    margin-top: 140px;
+    height: max-content;
+    margin-left: 4%;
+}
+
+.taskItemsListHeader {
+    margin-top: -2rem;
+    font-weight: 700;
+    font-size: 50px;
+}
+
+.createNewTaskItemButtonWrapper {
+    margin-top: -2.8rem;
+    margin-bottom: 0.8125rem;
+    margin-left: 1rem;
+}
+
+.groupElements:hover {
+    background-color: #b3b3b3;
+    cursor: default;
+}
+
+.btn-groups {
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    border: none;
+    background-color: #b3b3b3;
+    margin-left: 100%;
+    margin-top: -13px;
+}
+
+.btn-groups:hover {
+    background-color: #d9d9d9;
+}
+
+.taskItemsContainers {
+    padding-bottom: 20vh;
+}

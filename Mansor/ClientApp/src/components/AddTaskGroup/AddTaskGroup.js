@@ -39,19 +39,12 @@ export class AddTaskGroup extends Component {
             this.setState({ textColor: color.error });
         }
         else {
-            let url = endpoints.createTaskGroup();
-            await fetch(url, {
+            await fetch(endpoints.createTaskGroup(), {
                 method: 'POST',
                 headers: {
-                    'Content-type': 'application/json; charset=UTF-8',
-                    'Access-Control-Allow-Credentials': true
+                    'Content-type': 'application/json',
                 },
-                body: JSON.stringify({
-                    "name": input,
-                    "userId": 1,
-                    "user": null,
-                    "taskItems": null
-                })
+                body: JSON.stringify({ "name": input, })
             })
                 .then((response) => {
                     if (!response.ok) {
@@ -66,7 +59,6 @@ export class AddTaskGroup extends Component {
                 })
                 .catch(error => {
                     console.error(error);
-                    // handle error message or display to user
                 });
         }
     }
@@ -114,8 +106,7 @@ export class AddTaskGroup extends Component {
                                                     {this.state.errorMessage}</p>
                                             </div>
                                             <Link to='/taskGroups' id='close' onClick={() => { this.this.close() }}>Cancel</Link>
-                                            <button type="submit" id="submit" method="post" className="btn"
-                                                onClick={(userId) => this.createTaskGroup(userId)}>Add</button>
+                                            <button type="submit" id="submit" method="post" className="btn" name="addTaskGroup">Add</button>
                                         </div>
                                     </form>
                                 </div>

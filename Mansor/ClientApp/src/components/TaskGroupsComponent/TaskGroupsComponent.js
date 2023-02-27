@@ -62,8 +62,6 @@ export default class TaskGroupsComponent extends Component {
                     {/*<button className="btn-groups"></button>*/}
                 </div>
             </div>
-
-
         );
     }
 }

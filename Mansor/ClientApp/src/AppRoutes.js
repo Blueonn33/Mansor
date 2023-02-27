@@ -30,11 +30,11 @@ const AppRoutes = [
         element: <RegisterMenu />
     },
     //{
-    //    path: '/tasks/:id',
+    //    path: '/taskGroups/:id',
     //    element: <Tasks />
     //},
     {
-        path: '/taskGroups/:id',
+        path: '/taskItems/:id',
         element: <TasksComponent />
     },
     {
