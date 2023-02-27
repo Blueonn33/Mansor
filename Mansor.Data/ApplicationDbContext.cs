@@ -8,6 +8,7 @@ namespace Mansor.Data
         public DbSet<User> Users { get; set; } = null!;
         public DbSet<TaskGroup> TaskGroups { get; set; } = null!;
         public DbSet<TaskItem> TaskItems { get; set; } = null!;
+        public DbSet<Note> Notes { get; set; } = null!;
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
            : base(options)

@@ -21,6 +21,28 @@ namespace Mansor.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("Mansor.Data.Models.Note", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Notes");
+                });
+
             modelBuilder.Entity("Mansor.Data.Models.TaskGroup", b =>
                 {
                     b.Property<int>("Id")
@@ -107,6 +129,17 @@ namespace Mansor.Data.Migrations
                             Name = "Yoana Ivanova",
                             Password = "141414"
                         });
+                });
+
+            modelBuilder.Entity("Mansor.Data.Models.Note", b =>
+                {
+                    b.HasOne("Mansor.Data.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Mansor.Data.Models.TaskGroup", b =>

@@ -14,9 +14,10 @@
     position: fixed;
     left: 0;
     bottom: 0;
-    width: 100%;
+    width: stretch;
     text-align: center;
     background-color: black;
+    margin-top: 15vh;
 }
 
 #main-content, #dev {

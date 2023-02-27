@@ -9,7 +9,7 @@ export class RegisterMenu extends Component {
         return (
             <div>
                 <form id="registerForm">
-                    <h2 id="title">Register</h2>
+                    <h2 id="register-txt">Register</h2>
                         <hr id="line"></hr>
                         <div className="inputs">
                             <label>Email:

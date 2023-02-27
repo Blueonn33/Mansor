@@ -3,9 +3,10 @@ import { FetchData } from "./components/FetchData";
 import { Home } from "./components/Home";
 import { LandingPage } from './components/LandingPage/LandingPage'
 import { RegisterMenu } from './components/api-authorization/RegisterMenu';
-import { Tasks } from './components/Tasks/Tasks';
+//import { Tasks } from './components/Tasks/Tasks';
 import { Notes } from './components/Notes/Notes';
 import TaskGroupsComponent from "./components/TaskGroupsComponent/TaskGroupsComponent";
+import TasksComponent from "./components/TasksComponent/TasksComponent";
 
 const AppRoutes = [
     {
@@ -28,9 +29,13 @@ const AppRoutes = [
         path: '/register',
         element: <RegisterMenu />
     },
+    //{
+    //    path: '/tasks/:id',
+    //    element: <Tasks />
+    //},
     {
-        path: '/tasks/:id',
-        element: <Tasks />
+        path: '/taskGroups/:id',
+        element: <TasksComponent />
     },
     {
         path: '/taskGroups',
