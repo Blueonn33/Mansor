@@ -3,6 +3,7 @@ import '../LandingPage/LandingPageStyles.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.js';
 import 'bootstrap/dist/css/bootstrap.css';
+//import { TasksCalendar } from '../TasksCalendar/TasksCalendar';
 
 export class LandingPage extends Component {
     static displayName = LandingPage.name;
@@ -44,7 +45,8 @@ export class LandingPage extends Component {
                                 </header>
                             </article>
                         </div>
-                    </div>
+                </div>
+                {/*<TasksCalendar />*/}
                     <ul className="functionalities d-flex mb-3">
                         <li className="option p-2 flex-fill" id="task"
                             onClick={() => this.showImg("modal-tasks", "tasksImg", "modal-table", "modal-notes")}>

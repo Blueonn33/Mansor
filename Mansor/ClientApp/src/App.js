@@ -2,14 +2,13 @@ import React, { Component } from 'react';
 import AppRoutes from './AppRoutes';
 import { RegisterMenu } from './components/api-authorization/RegisterMenu';
 import { LandingPage } from './components/LandingPage/LandingPage';
-//import { Tasks } from './components/Tasks/Tasks';
 import { Layout } from './components/Layout';
-//import { TasksComponent } from './components/TasksComponent/TasksComponent';
 import { Route, Routes } from "react-router-dom";
 import './custom.css';
 import TaskGroupsComponent from './components/TaskGroupsComponent/TaskGroupsComponent';
 import { Notes } from './components/Notes/Notes';
 import TasksComponent from './components/TasksComponent/TasksComponent';
+import { TasksCalendar } from './components/TasksCalendar/TasksCalendar';
 
 export default class App extends Component {
     static displayName = App.name;
@@ -28,6 +27,7 @@ export default class App extends Component {
                     {/*   <Route path='/taskGroups/:id' element={<Tasks />} />*/}
                     <Route path='/taskItems/:id' element={<TasksComponent />} />
                     <Route path='/taskGroups' element={<TaskGroupsComponent />} />
+                    <Route path='/calendar' element={<TasksCalendar />} />
                     <Route path='/notes' element={<Notes />} />
                 </Routes>
             </Layout>

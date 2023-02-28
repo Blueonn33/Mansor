@@ -1,0 +1,96 @@
+﻿#container {
+    display: flex;
+    margin-top: 10%;
+    margin-bottom: 20vh;
+    margin-right: 10%;
+}
+
+.calendar-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    margin-top: -10%;
+    margin-left: 13%;
+}
+
+.dx-calendar-cell:not(.dx-calendar-other-month) .weekend,
+.dx-calendar-cell:not(.dx-calendar-other-month) .holiday {
+    text-shadow: none;
+    font-weight: bold;
+}
+
+.dx-calendar-cell:not(.dx-calendar-other-month) .weekend {
+    color: #3030ff;
+}
+
+.dx-state-disabled.dx-calendar .dx-calendar-cell:not(.dx-calendar-other-month) .weekend {
+    color: #8080ff;
+}
+
+.dx-calendar-cell:not(.dx-calendar-other-month) .holiday {
+    color: #ff3030;
+}
+
+.dx-state-disabled.dx-calendar .dx-calendar-cell:not(.dx-calendar-other-month) .holiday {
+    color: #ff8080;
+}
+
+.dx-calendar-week-number-cell .week-number {
+    font-style: italic;
+}
+
+.dx-checkbox-text{
+    color: white;
+}
+
+.caption {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.optionsList {
+    padding: 20px;
+    background-color: rgba(191, 191, 191, 0.15);
+    color: white;
+}
+
+.options {
+    margin-top: 10px;
+    color: white;
+}
+
+/*.backBtn{
+    margin-top: -1%;
+    height: max-content;
+    margin-left: 15%;
+}*/
+
+.backBtn {
+    font-family: sans-serif;
+    background-color: #424242;
+    border: 3px #b3b3b3 solid;
+    color: white;
+    border-radius: 10px;
+    font-size: 15px;
+    padding: 2px 10px 2px 10px;
+    margin-top: -1%;
+    margin-left: 17%;
+    height: max-content;
+}
+
+.backBtn:hover {
+    background-color: #b3b3b3;
+    border: 3px white solid;
+    color: white;
+}
+
+.backBtnText {
+    color: white;
+    text-decoration: none;
+}
+
+.backBtnText:hover {
+    color: white;
+}

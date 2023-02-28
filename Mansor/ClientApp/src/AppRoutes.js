@@ -3,10 +3,10 @@ import { FetchData } from "./components/FetchData";
 import { Home } from "./components/Home";
 import { LandingPage } from './components/LandingPage/LandingPage'
 import { RegisterMenu } from './components/api-authorization/RegisterMenu';
-//import { Tasks } from './components/Tasks/Tasks';
 import { Notes } from './components/Notes/Notes';
 import TaskGroupsComponent from "./components/TaskGroupsComponent/TaskGroupsComponent";
 import TasksComponent from "./components/TasksComponent/TasksComponent";
+import { TasksCalendar } from "./components/TasksCalendar/TasksCalendar";
 
 const AppRoutes = [
     {
@@ -29,10 +29,6 @@ const AppRoutes = [
         path: '/register',
         element: <RegisterMenu />
     },
-    //{
-    //    path: '/taskGroups/:id',
-    //    element: <Tasks />
-    //},
     {
         path: '/taskItems/:id',
         element: <TasksComponent />
@@ -40,6 +36,10 @@ const AppRoutes = [
     {
         path: '/taskGroups',
         element: <TaskGroupsComponent />
+    },
+    {
+        path: '/calendar',
+        element: <TasksCalendar />
     },
     {
         path: '/notes',
