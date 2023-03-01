@@ -23,7 +23,6 @@ html {
 }
 
 .logo-img {
-    /*margin-left: -30%;*/
     margin-right: 10px;
 }
 
@@ -40,7 +39,8 @@ html {
 #btn-groups {
     position: absolute;
     bottom: 0px;
-    margin-left: 19%;
+    margin-left: 9%;
+    /*margin-right:*/ 
 }
 
 #btn-groups:hover {
@@ -48,7 +48,7 @@ html {
     color: black;
 }
 
-#btn-notes {
+/*#btn-notes {
     position: absolute;
     bottom: 0px;
     margin-left: 9.7%;
@@ -57,10 +57,10 @@ html {
 #btn-notes:hover {
     background-color: #D4B170;
     color: black;
-}
+}*/
 
 #brand {
     font-size: 35px;
-    margin-right: 20%;
+    margin-right: 31%;
     color: #424242;
 }

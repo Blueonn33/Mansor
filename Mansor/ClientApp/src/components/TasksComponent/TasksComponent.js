@@ -71,9 +71,6 @@ export default class TasksComponent extends Component {
                         <div className='taskItemsListHeaderWrapper d-flex'>
                             <h4 className='taskItemsListHeader'>{this.state.taskGroupHeaderName}</h4>
                         </div>
-                        <button className='calendarBtn'>
-                            <a href={`https://localhost:44494/calendar`} className='calendarBtnText'>Calendar</a>
-                        </button> 
                         <div className='createNewTaskItemButtonWrapper'>
                             <AddTaskItem onTaskItemAdded={this.loadTaskItems} />
                         </div>

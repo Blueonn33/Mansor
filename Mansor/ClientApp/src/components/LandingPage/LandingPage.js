@@ -3,7 +3,8 @@ import '../LandingPage/LandingPageStyles.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.js';
 import 'bootstrap/dist/css/bootstrap.css';
-//import { TasksCalendar } from '../TasksCalendar/TasksCalendar';
+import { TasksCalendar } from '../TasksCalendar/TasksCalendar';
+import { Calendar } from 'devextreme-react';
 
 export class LandingPage extends Component {
     static displayName = LandingPage.name;
@@ -24,7 +25,7 @@ export class LandingPage extends Component {
         return (
                 <div>
                     <div className="body-container">
-                    <div className="body-content">
+                        <div className="body-content">
                             <article className="main-content">
                                 <header>
                                     <p>
@@ -45,8 +46,7 @@ export class LandingPage extends Component {
                                 </header>
                             </article>
                         </div>
-                </div>
-                {/*<TasksCalendar />*/}
+                    </div>
                     <ul className="functionalities d-flex mb-3">
                         <li className="option p-2 flex-fill" id="task"
                             onClick={() => this.showImg("modal-tasks", "tasksImg", "modal-table", "modal-notes")}>
@@ -118,9 +118,25 @@ export class LandingPage extends Component {
                         </div>
                         <button id="btn-close" onClick={() => this.closeImg("modal-notes", "notesImg")}>Close</button>
                 </div>
-                <button id="btn-register">
-                    <a href={`https://localhost:44494/register`} id="reg-text">Register</a>
-                </button>
+                    <div className="calendar-demo">
+                    <h1 className="calendarText">Try our calendar</h1>
+                        <div className="calendar-content">
+                            <p>It is simple to use</p>
+                            <p>You can specify the initial view of the calendar</p>
+                             <ul className="initialView">
+                                <li>- Month</li>
+                                <li>- Year</li>
+                                <li>- Decade</li>
+                                <li>- Century</li>
+                            </ul>
+                            <p>The current date is in bold so you don't forget what day it is</p>
+                        </div>
+                        <Calendar className="calendar" />
+                    </div>
+                   
+                    <button id="btn-register">
+                        <a href={`https://localhost:44494/register`} id="reg-text">Register</a>
+                    </button>
                 </div>
         );
     }

@@ -27,6 +27,7 @@ body {
     background-color: #424242 !important;
     overflow-y: scroll;
     overflow-x: hidden;
+    width: 100%;
 }
 
 ::selection {
@@ -79,6 +80,7 @@ ul {
     padding: 0;
     overflow: hidden;
     position: sticky;
+    padding: 0;
 }
 
 /*li {
@@ -202,6 +204,35 @@ button {
     color: black;
 }
 
+.calendar-demo{
+    margin-top: 10%;
+    /*margin-left: 38%;*/
+    margin-bottom: 10vh;
+    background-color: #b3b3b3;
+    padding: 2%;
+    width: 100%;
+    /*padding-left: 38%;*/
+}
+.calendarText {
+    margin-left: -0.6%;
+    color: #424242;
+}
+.calendar-content {
+    margin-left: 35%;
+    color: #424242;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.initialView {
+    margin-left: 5%;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+.calendar{
+    margin-top: -18.8%;
+}
 ::-webkit-scrollbar {
     width: 10px;
 }
