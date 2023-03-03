@@ -65,6 +65,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="ClientApp\src\components\api-authorization\" />
     <Folder Include="ClientApp\src\components\TasksContainer\" />
   </ItemGroup>
 
