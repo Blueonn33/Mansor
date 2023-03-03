@@ -6,7 +6,7 @@ import { Notes } from './components/Notes/Notes';
 import TaskGroupsComponent from "./components/TaskGroupsComponent/TaskGroupsComponent";
 import TasksComponent from "./components/TasksComponent/TasksComponent";
 import { TasksCalendar } from "./components/TasksCalendar/TasksCalendar";
-import { RegisterMenu } from "./components/api-authorization/RegisterMenu";
+import { RegisterMenu } from "./components/RegisterMenu/RegisterMenu";
 
 const AppRoutes = [
     {

@@ -12,10 +12,19 @@ namespace Mansor.Controllers
     {
         private readonly ITaskItemsService _taskItemsService;
         private readonly ITaskGroupsService _taskGroupsService;
+        private readonly IUsersService _usersService;
         public TaskItemsController(ITaskItemsService taskItemsService, ITaskGroupsService taskGroupsService)
         {
             _taskItemsService = taskItemsService;
             _taskGroupsService = taskGroupsService;
+        }
+
+        [HttpGet]
+        [Route("api/taskItems")]
+        public async Task<IEnumerable<TaskItem>> GetAllTasks()
+        {
+            Response.Headers.Add("Access-Control-Allow-Origin", "*");
+            return await _taskItemsService.GetTaskItemsAsync();
         }
 
         [HttpGet]
@@ -32,12 +41,13 @@ namespace Mansor.Controllers
         }
 
         [HttpPost]
-        [Route("api/taskItem/create/{taskGroupId}")]
-        public async Task<IActionResult> CreateTaskItems([FromRoute] int taskGroupId, [FromBody] TaskItemsRequestModel taskItemsRequestModel)
+        [Route("api/taskItem/create")]
+        public async Task<IActionResult> CreateTaskItems([FromBody] TaskItemsRequestModel taskItemsRequestModel)
         {
-            var taskGroup = await _taskGroupsService.GetTaskGroupById(taskGroupId);
+            var userId = _usersService.GetCurrentUserId().Result;
+            var taskGroupId = await _usersService.GetTaskGroupIdByUserId(userId);
+            var taskGroup = await _taskGroupsService.GetTaskGroupById(taskGroupId.Value);
             var taskItem = taskItemsRequestModel.TaskItems(taskGroup);
-
             var result = await _taskItemsService.CreateTaskItem(taskItem);
 
             return Ok(result);

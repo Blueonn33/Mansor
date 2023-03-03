@@ -8,7 +8,7 @@ import TaskGroupsComponent from './components/TaskGroupsComponent/TaskGroupsComp
 import { Notes } from './components/Notes/Notes';
 import TasksComponent from './components/TasksComponent/TasksComponent';
 import { TasksCalendar } from './components/TasksCalendar/TasksCalendar';
-import { RegisterMenu } from './components/api-authorization/RegisterMenu';
+import { RegisterMenu } from './components/RegisterMenu/RegisterMenu';
 
 export default class App extends Component {
     static displayName = App.name;

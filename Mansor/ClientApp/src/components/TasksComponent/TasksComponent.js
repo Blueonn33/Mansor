@@ -1,8 +1,8 @@
 ﻿import React, { Component } from 'react'
 import { endpoints } from '../../endpoints';
 import '../TasksComponent/TasksComponent.css';
-import TaskGroupsContainer from '../TaskGroupsContainer/TaskGroupsContainer';
 import { AddTaskItem } from '../AddTaskItem/AddTaskItem';
+import TasksContainer from '../TasksContainer/TasksContainer';
 
 export default class TasksComponent extends Component {
 
@@ -37,30 +37,39 @@ export default class TasksComponent extends Component {
             )
     }
 
-    async loadTaskItems(taskGroupId){
-        let splittedURL = window.location.pathname.split('/')
-        taskGroupId = splittedURL[splittedURL.length - 1]
-        await fetch(endpoints.loadTaskItems(taskGroupId))
-            .then(async (res) => {
-                let taskItemData = await res.json()
-                this.setState({ 'taskItemData': taskItemData })
-                this.setState({ 'currentTaskItemName': taskItemData.name })
-                this.setState({ 'taskItemHeaderName': taskItemData.name })
-            }
-            )
+    //async loadTaskItems(taskGroupId){
+    //    let splittedURL = window.location.pathname.split('/')
+    //    taskGroupId = splittedURL[splittedURL.length - 1]
+    //    await fetch(endpoints.loadTaskItems(taskGroupId))
+    //        .then(async (res) => {
+    //            let taskItemData = await res.json()
+    //            this.setState({ 'taskItemData': taskItemData })
+    //            this.setState({ 'currentTaskItemName': taskItemData.name })
+    //            this.setState({ 'taskItemHeaderName': taskItemData.name })
+    //        }
+    //        )
+    //        .then((res) => res.json())
+    //        .then((res) => this.setState({ tasks: res }))
+    //        .catch(error => console.error(error));
+
+    //    //let taskGroupId = 1; // replace with your desired ID
+    //    //let url = endpoints.loadTaskItems(taskGroupId);
+        
+    //    //fetch(url)
+    //    //    .then((res) => res.json())
+    //    //    .then((res) => this.setState({ tasks: res }))
+    //    //    .catch(error => console.error(error));
+
+    //endpoints.loadTaskItems()
+    //}
+
+    async loadTaskItems() {
+        let url = 'https://localhost:7286/api/taskItems';
+
+        fetch(url)
             .then((res) => res.json())
             .then((res) => this.setState({ tasks: res }))
             .catch(error => console.error(error));
-
-        //let taskGroupId = 1; // replace with your desired ID
-        //let url = endpoints.loadTaskItems(taskGroupId);
-        
-        //fetch(url)
-        //    .then((res) => res.json())
-        //    .then((res) => this.setState({ tasks: res }))
-        //    .catch(error => console.error(error));
-
-
     }
 
     render() {
@@ -77,7 +86,7 @@ export default class TasksComponent extends Component {
                         <div className='taskItemsContainers'>
                             {this.state.tasks.map((taskItem) => {
                                 return (
-                                    <TaskGroupsContainer taskItemData={taskItem} key={taskItem.id} />
+                                    <TasksContainer taskItemData={taskItem} key={taskItem.id} />
                                 )
                             })}
                         </div>

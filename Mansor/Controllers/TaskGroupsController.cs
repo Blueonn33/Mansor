@@ -1,19 +1,6 @@
 ﻿using Mansor.Business.Services.Interfaces;
 using Mansor.Data.Models;
-using Mansor.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using System.Collections;
-using System.Linq;
-using Mansor.Data;
-using Mansor.Data.Repositories;
-using Mansor.Business.Services.Interfaces;
-using System.Drawing.Text;
-using System.Net;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Microsoft.AspNetCore.Cors;
 
 namespace Mansor.Controllers
 {

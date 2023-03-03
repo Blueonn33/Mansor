@@ -17,7 +17,7 @@ namespace Mansor.Data.Models
         public string Email { get; set; } = null!;
 
         public string Password { get; set; } = null!;
-
+        public int? TaskGroupId { get; set; }
         public virtual List<TaskGroup> TaskGroups { get; set; } = null!;
     }
 }

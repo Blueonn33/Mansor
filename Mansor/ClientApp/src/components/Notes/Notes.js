@@ -7,6 +7,7 @@ export class Notes extends Component {
     render() {
         return (
             <div>
+
             </div>
         );
     }

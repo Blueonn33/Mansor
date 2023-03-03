@@ -27,5 +27,6 @@ namespace Mansor.Business.Services
             return await _taskItemsRepository.GetAllTasksAsync(taskGroupId);
         }
 
+        public async Task<IEnumerable<TaskItem>> GetTaskItemsAsync() => await _taskItemsRepository.GetAllTasks();
     }
 }

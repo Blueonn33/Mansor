@@ -14,5 +14,6 @@ namespace Mansor.Data.Repositories
         {
             return await Entities.AsNoTracking().Include(t => t.TaskGroup.User).Where(t => t.TaskGroupId == taskGroupId).ToListAsync();
         }
+        public async Task<IEnumerable<TaskItem>> GetAllTasks() => await Entities.ToListAsync();
     }
 }

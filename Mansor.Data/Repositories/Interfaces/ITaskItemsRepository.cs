@@ -10,5 +10,6 @@ namespace Mansor.Data.Repositories.Interfaces
     public interface ITaskItemsRepository : IRepository<TaskItem>
     {
         Task<IEnumerable<TaskItem>> GetAllTasksAsync(int taskGroupId);
+        Task<IEnumerable<TaskItem>> GetAllTasks();
     }
 }

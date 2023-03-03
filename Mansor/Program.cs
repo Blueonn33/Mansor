@@ -20,6 +20,12 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddScoped<ITaskGroupsRepository, TaskGroupsRepository>();
 builder.Services.AddScoped<ITaskGroupsService, TaskGroupsService>();
 
+builder.Services.AddScoped<ITaskItemsRepository, TaskItemsRepository>();
+builder.Services.AddScoped<ITaskItemsService, TaskItemsService>();
+
+builder.Services.AddScoped<IUsersRepository, UsersRepository>();
+builder.Services.AddScoped<IUsersService, UsersService>();
+
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(builder =>

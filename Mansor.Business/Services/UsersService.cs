@@ -51,5 +51,11 @@
             return null;
             // return await _userRepository.GetAllUsers();
         }
+
+        public async Task<int?> GetTaskGroupIdByUserId(string userId)
+        {
+            var result = await _userRepository.FindAsync(userId);
+            return result?.TaskGroupId;
+        }
     }
 }
