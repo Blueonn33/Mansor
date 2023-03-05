@@ -1,0 +1,44 @@
+﻿#createNote {
+    font-family: sans-serif;
+    font-size: 20px;
+    background-color: #424242;
+    border: 3px #b3b3b3 solid;
+    color: white;
+    border-radius: 10px;
+    margin-left: 983px;
+    margin-top: -300px;
+    font-size: 20px;
+    padding: 5px 17px 5px 17px;
+}
+
+.noteButtonWrapper {
+    margin-left: auto;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.noteButtonWrapper .noteButton {
+    font-family: sans-serif;
+    background-color: #424242;
+    border: 3px #b3b3b3 solid;
+    color: white;
+    border-radius: 10px;
+    margin-right: 1rem;
+    font-size: 15px;
+    padding: 2px 10px 2px 10px;
+}
+
+.noteButtonWrapper .noteButton:hover {
+    background-color: #b3b3b3;
+    border: 3px white solid;
+}
+
+.noteButtonText {
+    color: white;
+    text-decoration: none;
+}
+
+.noteButtonText:hover {
+    color: white;
+    text-decoration: none;
+}

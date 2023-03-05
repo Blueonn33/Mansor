@@ -2,11 +2,12 @@ import { Counter } from "./components/Counter";
 import { FetchData } from "./components/FetchData";
 import { Home } from "./components/Home";
 import { LandingPage } from './components/LandingPage/LandingPage'
-import { Notes } from './components/Notes/Notes';
 import TaskGroupsComponent from "./components/TaskGroupsComponent/TaskGroupsComponent";
 import TasksComponent from "./components/TasksComponent/TasksComponent";
 import { TasksCalendar } from "./components/TasksCalendar/TasksCalendar";
 import { RegisterMenu } from "./components/RegisterMenu/RegisterMenu";
+import Notes from "./components/Notes/Notes";
+import { NotesComponent } from "./components/NotesComponent/NotesComponent";
 
 const AppRoutes = [
     {
@@ -44,6 +45,10 @@ const AppRoutes = [
     {
         path: '/notes',
         element: <Notes />
+    },
+    {
+        path: '/addNote',
+        element: <NotesComponent />
     },
 ];
 

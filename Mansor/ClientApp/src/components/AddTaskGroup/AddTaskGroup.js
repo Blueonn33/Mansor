@@ -44,7 +44,10 @@ export class AddTaskGroup extends Component {
                 headers: {
                     'Content-type': 'application/json',
                 },
-                body: JSON.stringify({ "name": input, })
+                body: JSON.stringify({
+                    "name": input,
+                    "userId": 1
+                })
             })
                 .then((response) => {
                     if (!response.ok) {

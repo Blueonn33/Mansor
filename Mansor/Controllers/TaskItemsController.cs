@@ -1,9 +1,7 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Mansor.Business.Services.Interfaces;
+﻿using Mansor.Business.Services.Interfaces;
 using Mansor.Data.Models;
 using Mansor.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Mansor.Controllers
 {
@@ -31,6 +29,7 @@ namespace Mansor.Controllers
         [Route("api/taskItems/{taskGroupId}")]
         public async Task<IActionResult> GetAllItems([FromRoute] int taskGroupId)
         {
+            Response.Headers.Add("Access-Control-Allow-Origin", "*");
             var items = await _taskItemsService.GetAllItems(taskGroupId);
 
             if (!items.Any())
@@ -41,7 +40,7 @@ namespace Mansor.Controllers
         }
 
         [HttpPost]
-        [Route("api/taskItem/create")]
+        [Route("api/create/taskItem")]
         public async Task<IActionResult> CreateTaskItems([FromBody] TaskItemsRequestModel taskItemsRequestModel)
         {
             var userId = _usersService.GetCurrentUserId().Result;

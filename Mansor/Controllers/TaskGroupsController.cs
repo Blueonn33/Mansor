@@ -34,7 +34,7 @@ namespace Mansor.Controllers
         }
 
         [HttpPost]
-        [Route("api/taskGroup/create")]
+        [Route("api/create/taskGroup")]
         public async Task<IActionResult> CreateTaskGroup([FromBody] TaskGroup createTaskGroup)
         {
             var taskGroup = await _taskGroupsService.GetTaskGroupByNameAsync(createTaskGroup.Name);

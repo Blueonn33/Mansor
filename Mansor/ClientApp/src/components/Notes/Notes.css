@@ -1,1 +1,38 @@
-﻿
+﻿.notesContainer {
+    top: 8rem;
+    width: 1080px;
+    height: max-content;
+    background-color: #424242 !important;
+    color: white;
+}
+
+.notesContainers {
+    margin-top: 100px;
+    font-size: 20px;
+    margin-right: 10px;
+    text-align: left;
+}
+
+.notesListHeaderWrapper {
+    background-color: #424242;
+    color: white;
+    margin-top: 130px;
+    height: max-content;
+    margin-left: 42%;
+}
+
+.notesListHeader {
+    margin-top: -2rem;
+    font-weight: 700;
+    font-size: 50px;
+}
+
+.createNewNoteButtonWrapper {
+    margin-top: -2.8rem;
+    margin-bottom: 0.8125rem;
+    margin-left: 1rem;
+}
+
+.notesContainers {
+    padding-bottom: 20vh;
+}

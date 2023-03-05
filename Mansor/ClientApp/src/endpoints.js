@@ -2,8 +2,10 @@
 export const endpoints = {
     loadTaskGroups: () => `${apiBaseUrl}/api/taskGroups`,
     getTaskGroupName: (taskGroupId) => `${apiBaseUrl}/api/taskGroup/${taskGroupId}`,
-    createTaskGroup: () => `${apiBaseUrl}/api/taskGroup/create`,
-    loadTaskItems: () => `${apiBaseUrl}/api/taskItems`,
-    //loadTaskItems: (taskGroupId) => `${apiBaseUrl}/api/taskItems/${taskGroupId}`,
-    createTaskItem: () => `${apiBaseUrl}/api/taskItem/create`,
+    createTaskGroup: () => `${apiBaseUrl}/api/create/taskGroup`,
+    //loadTaskItems: () => `${apiBaseUrl}/api/taskItems`,
+    loadTaskItems: (taskGroupId) => `${apiBaseUrl}/api/taskItems/${taskGroupId}`,
+    createTaskItem: () => `${apiBaseUrl}/api/create/taskItem`,
+    loadNotes: () => `${apiBaseUrl}/api/notes`,
+    createNote: () => `${apiBaseUrl}/api/create/note`,
 }

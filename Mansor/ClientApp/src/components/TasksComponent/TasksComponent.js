@@ -14,8 +14,7 @@ export default class TasksComponent extends Component {
             taskGroupData: undefined,
             taskGroupHeaderName: '',
             taskItemData: undefined,
-            currentTaskItemName: '',
-            taskItemHeaderName: '',
+            currentTaskItemValue: '',
         }
         this.loadTaskItems = this.loadTaskItems.bind(this);
     }
@@ -63,9 +62,18 @@ export default class TasksComponent extends Component {
     //endpoints.loadTaskItems()
     //}
 
-    async loadTaskItems() {
+    async loadTaskItems(){
+        //let splittedURL = window.location.pathname.split('/')
+        //taskGroupId = splittedURL[splittedURL.length - 1]
         let url = 'https://localhost:7286/api/taskItems';
 
+        //await fetch(endpoints.loadTaskItems(taskGroupId))
+        //    .then(async (res) => {
+        //        let taskItemData = await res.json()
+        //        this.setState({ 'taskItemData': taskItemData })
+        //        this.setState({ 'currentTaskItemValue': taskItemData.value })
+        //    }
+        //    )
         fetch(url)
             .then((res) => res.json())
             .then((res) => this.setState({ tasks: res }))

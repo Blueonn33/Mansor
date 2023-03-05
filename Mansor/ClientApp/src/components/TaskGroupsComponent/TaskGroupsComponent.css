@@ -1,15 +1,12 @@
 ﻿.taskGroupsContainer {
-    /*position: absolute;*/
     top: 8rem;
     width: 1080px;
     height: max-content;
-    /*margin-bottom: 70px;*/
     background-color: #424242 !important;
     color: white;
 }
 .taskGroupsContainers {
     margin-top: 100px;
-    /*margin-left: -950px;*/
     font-size: 20px;
     margin-right: 10px;
     text-align: left;

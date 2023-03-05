@@ -4,30 +4,42 @@
     line-height: 27.24px;
     margin-left: 2rem;
     margin-right: 2rem;
-    margin-top: 1rem;
+    /*margin-top: 1rem;*/
 }
 
 .taskItemsContainer .taskItemNameWrapper {
-    margin-left: 1.125rem;
-    cursor: pointer;
-    position: relative;
-    padding: 12px 8px 12px 40px;
-    list-style-type: none;
-    background: #eee;
-    font-size: 18px;
-    transition: 0.2s;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-color: #d9d9d9;
+    /*    margin-left: 1.125rem;
+cursor: pointer;
+position: relative;
+padding: 12px 8px 12px 40px;
+list-style-type: none;
+background: #eee;
+font-size: 18px;
+transition: 0.2s;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+background-color: #d9d9d9;
+color: black;
+margin-bottom: -30px;
+font-size: 20px;
+margin-right: 5px;
+border: 3px solid #424242;
+width: 1080px;
+height: min-content;*/
+    border: none;
+    border-radius: 0;
+    width: 70%;
+    float: left;
+    font-size: 16px;
+    border-radius: 10px;
+    background-color: #B3B3B3;
+    margin-left: 0.8%;
+    margin-top: 5px;
+    padding: 10px 5px 5px 10px;
     color: black;
-    margin-bottom: -30px;
-    font-size: 20px;
-    margin-right: 5px;
-    border: 3px solid #424242;
-    width: 1080px;
-    height: min-content;
+    width: 820px;
 }
 
 .taskItemsContainer .taskItemNameWrapper:hover {
@@ -52,10 +64,13 @@
     background-color: #424242;
     border: 3px #b3b3b3 solid;
     color: white;
-    border-radius: 10px;
-    margin-right: 1rem;
+    /*border-radius: 10px;*/
+    margin-right: 13rem;
     font-size: 15px;
     padding: 2px 10px 2px 10px;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
 }
 
 .useTaskItemButtonWrapper .useButton:hover {
