@@ -39,6 +39,11 @@
             return await _userRepository.AddAsync(user);
         }
 
+        public async Task UnDeleteUser(User user)
+        {
+            user.IsDeleted = false;
+            await _userRepository.UpdateAsync(user);
+        }
         public async Task<string> GetCurrentUserId()
         {
             if (_httpContextAccessor.HttpContext.User.Identity != null)
@@ -50,6 +55,10 @@
             }
             return null;
             // return await _userRepository.GetAllUsers();
+        }
+        public User GetUserByEmail(string email)
+        {
+            return _userRepository.GetUserByEmail(email);
         }
 
         public async Task<int?> GetTaskGroupIdByUserId(string userId)

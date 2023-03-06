@@ -45,17 +45,12 @@ export class LoginMenu extends Component {
     }
 
     authenticatedView(userName, profilePath, logoutPath) {
-        let pageLocationSplitted = window.location.href.split('/')
-        const tenantId = pageLocationSplitted[pageLocationSplitted.length - 2]
         return (<Fragment>
             <NavItem>
-                <NavLink tag={Link} className="text-dark" id="trackerBtn" to={`/trackersList`}>Trackers</NavLink>
+                <NavLink tag={Link} className="text-white" to={"/taskGroups"} id="btn-groups">Groups</NavLink>
             </NavItem>
             <NavItem>
-                <NavLink tag={Link} className="text-dark" id="tenantBtn" to={'/tenants'}>Tenants</NavLink>
-            </NavItem>
-            <NavItem>
-                <NavLink tag={Link} className="text-dark" id="loginBtn" to={logoutPath}>Logout</NavLink>
+                <NavLink tag={Link} className="text-white" to={logoutPath} id="btn-login">Logout</NavLink>
             </NavItem>
         </Fragment>);
 
@@ -64,7 +59,7 @@ export class LoginMenu extends Component {
     anonymousView(loginPath) {
         return (<Fragment>
             <NavItem>
-                <NavLink id="loginBtn" tag={Link} className="text-dark" to={loginPath}>Log In</NavLink>
+                <NavLink tag={Link} className="text-white" to={loginPath} id="btn-login">Log In</NavLink>
             </NavItem>
         </Fragment>);
     }

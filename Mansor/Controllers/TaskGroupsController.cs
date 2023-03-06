@@ -8,6 +8,7 @@ namespace Mansor.Controllers
     public class TaskGroupsController : ControllerBase
     {
         private readonly ITaskGroupsService _taskGroupsService;
+        private readonly IUsersService _usersService;
 
         public TaskGroupsController(ITaskGroupsService taskGroupsService)
         {
@@ -38,6 +39,7 @@ namespace Mansor.Controllers
         public async Task<IActionResult> CreateTaskGroup([FromBody] TaskGroup createTaskGroup)
         {
             var taskGroup = await _taskGroupsService.GetTaskGroupByNameAsync(createTaskGroup.Name);
+            //var user = await _taskGroupsService.
 
             if (taskGroup != null)
             {

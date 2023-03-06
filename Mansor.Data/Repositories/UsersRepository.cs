@@ -20,5 +20,9 @@ namespace Mansor.Data.Repositories
             var users = await Entities.ToListAsync();
             return users;
         }
+        public User GetUserByEmail(string email)
+        {
+            return Entities.AsNoTracking().FirstOrDefault(u => u.Email == email);
+        }
     }
 }

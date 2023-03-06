@@ -1,20 +1,29 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
 namespace Mansor.Data.Models
 {
-    public class User
+    public class User : IdentityUser
     {
-        [Key]
-        public int Id { get; set; }
+        public User()
+        {
+            Name = string.Empty;
+            IsDeleted = false;
+        }
+
+        public User(string name) : this()
+        {
+            Name = name ?? throw new ArgumentNullException(nameof(name));
+        }
 
         public string Name { get; set; } = null!;
 
-        public string Email { get; set; } = null!;
-
-        public string Password { get; set; } = null!;
+        public bool IsDeleted { get; set; }
         public int? TaskGroupId { get; set; }
-        public virtual List<TaskGroup> TaskGroups { get; set; } = null!;
+        public int? NoteId { get; set; }
+        public ICollection<TaskGroup> TaskGroups { get; set; } = null!;
+        public ICollection<Note> Notes { get; set; } = null!;
     }
 }

@@ -1,17 +1,21 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Mansor.Data.Models;
+using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
+using Microsoft.Extensions.Options;
+using Duende.IdentityServer.EntityFramework.Options;
+using Microsoft.AspNetCore.Identity;
+using Mansor.Data.EntityConfigurations;
 
 namespace Mansor.Data
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : ApiAuthorizationDbContext<User>
     {
-        public DbSet<User> Users { get; set; } = null!;
-        public DbSet<TaskGroup> TaskGroups { get; set; } = null!;
-        public DbSet<TaskItem> TaskItems { get; set; } = null!;
-        public DbSet<Note> Notes { get; set; } = null!;
+        public DbSet<TaskGroup> TaskGroups => Set<TaskGroup>();
+        public DbSet<TaskItem> TaskItems => Set<TaskItem>();
+        public DbSet<Note> Note => Set<Note>();
 
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-           : base(options)
+        public ApplicationDbContext(DbContextOptions options, IOptions<OperationalStoreOptions> operationalStoreOptions)
+            : base(options, operationalStoreOptions)
         {
 
         }
@@ -21,30 +25,58 @@ namespace Mansor.Data
             base.OnModelCreating(builder);
 
             builder.Entity<User>().ToTable("Users");
+            builder.Entity<IdentityRole>().ToTable(name: "Roles");
+            builder.Entity<IdentityUserRole<string>>().ToTable("UserRoles");
+            builder.Entity<IdentityUserClaim<string>>().ToTable("UserClaims");
+            builder.Entity<IdentityUserLogin<string>>().ToTable("UserLogins");
+            builder.Entity<IdentityRoleClaim<string>>().ToTable("RoleClaims");
+            builder.Entity<IdentityUserToken<string>>().ToTable("UserTokens");
+
+            builder.ApplyConfiguration(new TaskGroupEntityConfiguration());
+            builder.ApplyConfiguration(new TaskItemEntityConfiguration());
+            builder.ApplyConfiguration(new UserEntityConfiguration());
+            builder.ApplyConfiguration(new NoteEntityConfiguration());
 
             SeedInitialData(builder);
         }
 
         private void SeedInitialData(ModelBuilder builder)
         {
-            var email = "martin17@gmail.com";
-            var password = "171717";
+            //Add user and role
+            var roleName = "Administrator";
+            var adminRoleId = Guid.NewGuid().ToString();
+            builder.Entity<IdentityRole>().HasData(new IdentityRole
+            {
+                Id = adminRoleId,
+                Name = roleName,
+                NormalizedName = roleName.ToUpper()
+            });
+
+            var email = "admin@mansor.net";
+            var adminUserId = Guid.NewGuid().ToString();
             var user = new User
             {
-                Id = 1,
-                Name = "Martin Marinov",
+                Id = adminUserId,
+                UserName = email,
+                NormalizedUserName = email.ToUpper(),
                 Email = email,
-                Password = password
+                NormalizedEmail = email.ToUpper(),
+                EmailConfirmed = true,
+                LockoutEnabled = false,
+                PhoneNumber = "171717",
+                Name = "Martin Marinov"
             };
-            var secondUser = new User
-            {
-                Id = 2,
-                Name = "Yoana Ivanova",
-                Email = "yoana14@gmail.com",
-                Password = "141414"
-            };
+            var passwordHasher = new PasswordHasher<User>();
+            user.PasswordHash = passwordHasher.HashPassword(user, "MaNs0r");
             builder.Entity<User>().HasData(user);
-            builder.Entity<User>().HasData(secondUser);
+
+            builder.Entity<IdentityUserRole<string>>().HasData(
+                new IdentityUserRole<string>
+                {
+                    RoleId = adminRoleId,
+                    UserId = adminUserId
+                }
+            );
         }
     }
 }

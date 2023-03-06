@@ -13,6 +13,8 @@ namespace Mansor.Business.Services.Interfaces
         Task<User?> GetUserByIdAsync(int id);
         Task<User> AddUser(User user);
         Task<string> GetCurrentUserId();
+        User GetUserByEmail(string email);
+        Task UnDeleteUser(User user);
         Task<int?> GetTaskGroupIdByUserId(string userId);
     }
 }
