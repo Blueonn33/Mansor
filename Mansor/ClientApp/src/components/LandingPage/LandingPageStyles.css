@@ -31,7 +31,8 @@ body {
 }
 
 ::selection {
-    color: #D4B170;
+    color: white;
+    background-color: black;
 }
 
 .header {
@@ -45,7 +46,7 @@ body {
     width: 800px;
     margin-left: 20%;
     margin-bottom: 100px;
-    padding-top: 400px;
+    padding-top: 330px;
     margin-top: -200px;
 }
 

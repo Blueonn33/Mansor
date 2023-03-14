@@ -23,7 +23,7 @@ namespace Mansor.Business.Services
             return _taskGroupsRepository.FindTaskGroup(id);
         }
 
-        public async Task<IEnumerable<TaskGroup>> GetTaskGroupsByUserId(int id)
+        public async Task<IEnumerable<TaskGroup>> GetTaskGroupsByUserId(string id)
         {
             return await _taskGroupsRepository.GetTaskGroupsByUserId(id);
         }

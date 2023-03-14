@@ -8,7 +8,7 @@ namespace Mansor.Data.Repositories.Interfaces
         public NotesRepository(ApplicationDbContext context) : base(context)
         {
         }
-        public async Task<IEnumerable<Note>> GetNotesByUserId(int userId)
+        public async Task<IEnumerable<Note>> GetNotesByUserId(string userId)
         {
             return await Entities.Include(t => t.User).Where(t => t.UserId == userId).ToListAsync();
         }

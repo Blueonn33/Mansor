@@ -1,9 +1,7 @@
 ﻿a.navbar-brand {
-    white-space: normal;
-    text-align: center;
-    word-break: break-all;
-}
+    margin-left: 9%;
 
+}
 html {
     font-size: 14px;
 }
@@ -16,14 +14,14 @@ html {
 
 #navigation-content {
     background-color: black !important;
-    position: absolute;
-    height: auto;
     left: 0px;
     right: 0px;
+    height: 100px;
 }
 
 .logo-img {
     margin-right: 10px;
+    margin-top: -10.5%;
 }
 
 #btn-login:hover {
@@ -32,7 +30,7 @@ html {
 }
 
 #btn-login {
-    position: absolute;
+    margin-top: 5%;
     bottom: 0px;
 }
 
@@ -40,7 +38,7 @@ html {
     position: absolute;
     bottom: 0px;
     margin-left: 9%;
-    /*margin-right:*/ 
+    margin-right: 4px;
 }
 
 #btn-groups:hover {
@@ -48,19 +46,8 @@ html {
     color: black;
 }
 
-/*#btn-notes {
-    position: absolute;
-    bottom: 0px;
-    margin-left: 9.7%;
-}
-
-#btn-notes:hover {
-    background-color: #D4B170;
-    color: black;
-}*/
-
 #brand {
     font-size: 35px;
-    margin-right: 31%;
     color: #424242;
+    
 }

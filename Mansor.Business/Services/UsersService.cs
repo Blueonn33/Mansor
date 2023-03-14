@@ -7,6 +7,7 @@
     using Mansor.Data.Repositories.Interfaces;
     using System.Security.Claims;
     using Microsoft.AspNetCore.Http;
+    using Microsoft.AspNetCore.Identity;
 
     public class UsersService : IUsersService
     {
@@ -21,8 +22,11 @@
         {
             return await _userRepository.GetAllUsers();
         }
-
-        public async Task<User?> GetUserByIdAsync(int id)
+        public Task DeleteAsync(User user)
+        {
+            return _userRepository.DeleteAsync(user);
+        }
+        public async Task<User?> GetUserByIdAsync(string id)
         {
             return await _userRepository.FindAsync(id);
         }
@@ -31,11 +35,16 @@
         {
             user = new User
             {
-                Id = user.Id,
+                Id = Guid.NewGuid().ToString(),
                 Email = user.Email,
-                Name = user.Name,
-                Password = user.Password
+                UserName = user.Email,
+                NormalizedUserName = user.Email.ToUpper(),
+                NormalizedEmail = user.Email.ToUpper(),
+                EmailConfirmed = true,
+                LockoutEnabled = false
             };
+            var passwordHasher = new PasswordHasher<User>();
+            user.PasswordHash = passwordHasher.HashPassword(user, "MaNs0r");
             return await _userRepository.AddAsync(user);
         }
 
@@ -54,17 +63,10 @@
                 return userId;
             }
             return null;
-            // return await _userRepository.GetAllUsers();
         }
         public User GetUserByEmail(string email)
         {
             return _userRepository.GetUserByEmail(email);
-        }
-
-        public async Task<int?> GetTaskGroupIdByUserId(string userId)
-        {
-            var result = await _userRepository.FindAsync(userId);
-            return result?.TaskGroupId;
         }
     }
 }

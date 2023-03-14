@@ -11,7 +11,6 @@ export default class TasksContainer extends Component {
                 </div>
                 <div className='useTaskItemButtonWrapper ml-auto'>
                     <button className='useButton'>
-                        {/*<a href={`https://localhost:44494/taskItems`} className='useButtonText'></a>*/}
                     </button>
                 </div>
             </div>

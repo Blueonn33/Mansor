@@ -18,7 +18,7 @@ namespace Mansor.Business.Services
             return _notesRepository.FindNote(id);
         }
 
-        public async Task<IEnumerable<Note>> GetNotesByUserId(int id)
+        public async Task<IEnumerable<Note>> GetNotesByUserId(string id)
         {
             return await _notesRepository.GetNotesByUserId(id);
         }

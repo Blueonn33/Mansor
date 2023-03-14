@@ -46,7 +46,7 @@ export class AddTaskGroup extends Component {
                 },
                 body: JSON.stringify({
                     name: input,
-                    userId: 1
+                    userId: "1"
                 })
             })
                 .then((response) => {

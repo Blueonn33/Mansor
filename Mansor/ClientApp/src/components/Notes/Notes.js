@@ -16,7 +16,8 @@ export default class Notes extends Component {
     }
 
     async loadNotes() {
-        let url = endpoints.loadNotes();     
+        let url = 'https://localhost:7286/api/notes';
+        //let url = endpoints.loadNotes();     
         fetch(url)
             .then((res) => res.json())
             .then((res) => this.setState({ notes: res }))

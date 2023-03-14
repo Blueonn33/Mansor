@@ -12,10 +12,26 @@ using Mansor.Data.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddRazorPages();
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlServer(connectionString));
+builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+
+builder.Services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<ApplicationDbContext>();
+
+builder.Services.AddIdentityServer()
+    .AddApiAuthorization<User, ApplicationDbContext>();
+
+builder.Services.AddAuthentication()
+    .AddIdentityServerJwt();
+
+builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages();
+
+builder.Services.AddControllers().AddJsonOptions(x =>
+                x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
 builder.Services.AddScoped<ITaskGroupsRepository, TaskGroupsRepository>();
 builder.Services.AddScoped<ITaskGroupsService, TaskGroupsService>();
@@ -23,8 +39,17 @@ builder.Services.AddScoped<ITaskGroupsService, TaskGroupsService>();
 builder.Services.AddScoped<ITaskItemsRepository, TaskItemsRepository>();
 builder.Services.AddScoped<ITaskItemsService, TaskItemsService>();
 
+builder.Services.AddScoped<INotesRepository, NotesRepository>();
+builder.Services.AddScoped<INotesService, NotesService>();
+
 builder.Services.AddScoped<IUsersRepository, UsersRepository>();
 builder.Services.AddScoped<IUsersService, UsersService>();
+
+builder.Services.AddScoped<ITimeTableDaysRepository, TimeTableDaysRepository>();
+builder.Services.AddScoped<ITimeTableDaysService, TimeTableDaysService>();
+
+builder.Services.AddScoped<ITimeTableItemsRepository, TimeTableItemsRepository>();
+builder.Services.AddScoped<ITimeTableItemsService, TimeTableItemsService>();
 
 builder.Services.AddCors(options =>
 {

@@ -4,10 +4,9 @@
     line-height: 27.24px;
     margin-left: 2rem;
     margin-right: 2rem;
-    margin-top: 1rem;
 }
 
-.notesContainer .noteNameWrapper {
+.notesContainer .noteNameWrapper{
     margin-left: 1.125rem;
     cursor: pointer;
     position: relative;
@@ -29,13 +28,23 @@
     width: 1080px;
     height: min-content;
 }
-
-.notesContainer .noteNameWrapper:hover {
+/*.notesContainer .noteTitleWrapper:hover {
     cursor: default;
     background-color: #b3b3b3;
+}*/
+.noteContentWrapper{
+    width: 1000px;
+    height: 100px;
+    background-color: #d9d9d9;
+    margin-bottom: 9px;
+    color: black;
+    margin-top: -8px;
 }
-
-.notesContainer .notesNameWrapper .note {
+.noteTitleWrapper {
+    background-color: #b3b3b3;
+    text-align: center;
+}
+.notesContainer .notesTitleWrapper .note {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     margin-top: 0.3rem;

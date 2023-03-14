@@ -11,6 +11,9 @@ namespace Mansor.Data.Models
         {
             Name = string.Empty;
             IsDeleted = false;
+            TaskGroups = new List<TaskGroup>();
+            Notes = new List<Note>();
+            TimeTableDays = new List<TimeTableDay>();
         }
 
         public User(string name) : this()
@@ -19,11 +22,9 @@ namespace Mansor.Data.Models
         }
 
         public string Name { get; set; } = null!;
-
         public bool IsDeleted { get; set; }
-        public int? TaskGroupId { get; set; }
-        public int? NoteId { get; set; }
         public ICollection<TaskGroup> TaskGroups { get; set; } = null!;
         public ICollection<Note> Notes { get; set; } = null!;
+        public ICollection<TimeTableDay> TimeTableDays { get; set; } = null!;
     }
 }

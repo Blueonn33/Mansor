@@ -9,7 +9,7 @@ namespace Mansor.Business.Services.Interfaces
     public interface ITaskGroupsService
     {
         Task<IEnumerable<TaskGroup>> GetTaskGroupsAsync();
-        Task<IEnumerable<TaskGroup>> GetTaskGroupsByUserId(int id);
+        Task<IEnumerable<TaskGroup>> GetTaskGroupsByUserId(string id);
         Task<TaskGroup?> GetTaskGroupById(int id);
         Task<TaskGroup> UpdateTaskGroupName(TaskGroup taskGroup);
         Task<TaskGroup> CreateTaskGroup(TaskGroup taskGroup);

@@ -35,35 +35,46 @@
             return await _usersService.GetUserAsync();
         }
 
-        //[HttpPost]
-        //[Route("api/create")]
-        //public async Task<IActionResult> CreateUser([FromBody] User user)
-        //{
-        //    var targetUser = _usersService.GetUserByEmail(user.Email);
+        [HttpDelete]
+        [Route("api/delete/{id}")]
+        public async Task<IActionResult> DeleteUser([FromRoute] string id)
+        {
+            var targetUser = await _usersService.GetUserByIdAsync(id);
+            if (targetUser == null)
+            {
+                return NotFound("User doesn't exists");
+            }
+            if (targetUser.IsDeleted)
+            {
+                return BadRequest("User is already deleted");
+            }
+            await _usersService.DeleteAsync(targetUser);
 
-        //    if (targetUser != null && targetUser.IsDeleted == true)
-        //    {
-        //        await _usersService.UnDeleteUser(targetUser, tenantId);
-        //        return Ok("User is added again!");
-        //    }
-        //    else if (targetUser != null && targetUser.IsDeleted == false)
-        //    {
-        //        return BadRequest("User already exist!");
-        //    }
-        //    else
-        //    {
-        //        await _usersService.AddUser(tenantId, user);
+            return Ok(targetUser);
+        }
 
-        //        return Ok(user);
-        //    }
+        [HttpPost]
+        [Route("api/create/user")]
+        public async Task<IActionResult> CreateUser([FromBody] User user)
+        {
+            var targetUser = _usersService.GetUserByEmail(user.Email);
 
-        //}
+            if (targetUser != null && targetUser.IsDeleted == true)
+            {
+                await _usersService.UnDeleteUser(targetUser);
+                return Ok("User is added again!");
+            }
+            else if (targetUser != null && targetUser.IsDeleted == false)
+            {
+                return BadRequest("User already exist!");
+            }
+            else
+            {
+                await _usersService.AddUser(user);
 
-        //[HttpGet]
-        //[Route("api/user/tenantId/{userId}")]
-        //public async Task<int?> GetTenantIdByUserId([FromRoute] string userId)
-        //{
-        //    return await _usersService.GetTenantIdByUserId(userId);
-        //}
+                return Ok(user);
+            }
+
+        }
     }
 }

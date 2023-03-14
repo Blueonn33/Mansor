@@ -7,26 +7,19 @@ namespace Mansor.Data.Models
         public TaskItem()
         {
             Value = Guid.NewGuid().ToString();
-            TaskGroups = new List<TaskGroup>();
         }
 
-        public TaskItem(int taskGroupId, string value, bool isCompleted = false) : this()
+        public TaskItem(TaskGroup? taskGroup, string value, bool completed = false) :this()
         {
-            TaskGroupId = taskGroupId;
+            _taskGroup = taskGroup;
             Value = value ?? throw new ArgumentNullException(nameof(value));
-            IsCompleted = isCompleted;
+            IsCompleted = completed;
         }
         public int Id { get; set; }
         public int TaskGroupId { get; set; }
-        private TaskGroup? _taskGroup;
-        public TaskGroup TaskGroup
-        {
-            get => _taskGroup ?? throw new InvalidOperationException("Uninitialized property: " + nameof(TaskGroup));
-            set => _taskGroup = value;
-        }
+        public TaskGroup? _taskGroup;
+        public TaskGroup TaskGroup;
         public string Value { get; set; }
         public bool IsCompleted { get; set; }
-
-        public ICollection<TaskGroup> TaskGroups { get; set; }
     }
 }

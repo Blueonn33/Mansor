@@ -13,6 +13,8 @@ namespace Mansor.Data
         public DbSet<TaskGroup> TaskGroups => Set<TaskGroup>();
         public DbSet<TaskItem> TaskItems => Set<TaskItem>();
         public DbSet<Note> Note => Set<Note>();
+        public DbSet<TimeTableDay> TimeTableDay => Set<TimeTableDay>();
+        public DbSet<TimeTableItem> TimeTableItem => Set<TimeTableItem>();
 
         public ApplicationDbContext(DbContextOptions options, IOptions<OperationalStoreOptions> operationalStoreOptions)
             : base(options, operationalStoreOptions)
@@ -34,8 +36,10 @@ namespace Mansor.Data
 
             builder.ApplyConfiguration(new TaskGroupEntityConfiguration());
             builder.ApplyConfiguration(new TaskItemEntityConfiguration());
-            builder.ApplyConfiguration(new UserEntityConfiguration());
             builder.ApplyConfiguration(new NoteEntityConfiguration());
+            builder.ApplyConfiguration(new UserEntityConfiguration());
+            builder.ApplyConfiguration(new TimeTableDayEntityConfiguration());
+            builder.ApplyConfiguration(new TimeTableItemEntityConfiguration());
 
             SeedInitialData(builder);
         }
@@ -77,6 +81,15 @@ namespace Mansor.Data
                     UserId = adminUserId
                 }
             );
+
+            //Seed Days
+            builder.Entity<TimeTableDay>().HasData(
+                new TimeTableDay { Id = 1, Name = "Monday", UserId = adminUserId },
+                new TimeTableDay { Id = 2, Name = "Tuesday", UserId = adminUserId },
+                new TimeTableDay { Id = 3, Name = "Wednesday", UserId = adminUserId },
+                new TimeTableDay { Id = 4, Name = "Thursday" , UserId = adminUserId },
+                new TimeTableDay { Id = 5, Name = "Friday", UserId = adminUserId }
+                );
         }
     }
 }

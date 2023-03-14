@@ -10,13 +10,13 @@ namespace Mansor.Data.EntityConfigurations
         {
             builder.ToTable("Notes");
 
-            builder.HasKey(tg => tg.Id);
-            builder.Property(t => t.Title).HasMaxLength(255);
-            builder.Property(c => c.Content).HasMaxLength(600);
+            builder.HasKey(p => p.Id);
+            builder.Property(p => p.Title).HasMaxLength(255);
+            builder.Property(p => p.Content).HasMaxLength(600);
 
-            builder.HasOne(u => u.User)
-                .WithMany(n => n.Notes)
-                .HasForeignKey(i => i.UserId);
+            builder.HasOne(n => n.User)
+                .WithMany(u => u.Notes)
+                .HasForeignKey(n => n.UserId);
         }
     }
 }

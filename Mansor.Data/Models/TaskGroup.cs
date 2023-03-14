@@ -10,25 +10,18 @@ namespace Mansor.Data.Models
         {
             Name = Guid.NewGuid().ToString();
             TaskItems = new List<TaskItem>();
-            Users = new List<User>();
         }
-        public TaskGroup(int userId, string name) : this()
+        public TaskGroup(User? user, string name) : this()
         {
-            UserId = userId;
+            _user = user;
             Name = name ?? throw new ArgumentNullException(nameof(name));
         }
         public int Id { get; set; }
 
         public string Name { get; set; }
-        private User? _user;
-        public User User
-        {
-            get => _user ?? throw new InvalidOperationException("Uninitialized property: " + nameof(User));
-            set => _user = value;
-        }
-        public int UserId { get; set; }
-
+        public User? _user;
+        public string? UserId { get; set; }
+        public User User;
         public ICollection<TaskItem> TaskItems { get; set; }
-        public ICollection<User> Users { get; set; }
     }
 }

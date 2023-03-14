@@ -11,6 +11,7 @@ import { RegisterMenu } from './components/RegisterMenu/RegisterMenu';
 import Notes from './components/Notes/Notes';
 import { NotesComponent } from './components/NotesComponent/NotesComponent';
 
+
 export default class App extends Component {
     static displayName = App.name;
 

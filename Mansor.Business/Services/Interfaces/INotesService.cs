@@ -5,7 +5,7 @@ namespace Mansor.Business.Services.Interfaces
     public interface INotesService
     {
         Task<IEnumerable<Note>> GetNotesAsync();
-        Task<IEnumerable<Note>> GetNotesByUserId(int id);
+        Task<IEnumerable<Note>> GetNotesByUserId(string id);
         Task<Note?> GetNoteById(int id);
         Task<Note> CreateNote(Note note);
         Task<Note?> GetNoteByTitleAsync(string title);

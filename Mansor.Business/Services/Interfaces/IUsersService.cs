@@ -10,11 +10,11 @@ namespace Mansor.Business.Services.Interfaces
     public interface IUsersService
     {
         Task<IEnumerable<User>> GetUserAsync();
-        Task<User?> GetUserByIdAsync(int id);
+        Task<User?> GetUserByIdAsync(string id);
         Task<User> AddUser(User user);
         Task<string> GetCurrentUserId();
         User GetUserByEmail(string email);
+        Task DeleteAsync(User user);
         Task UnDeleteUser(User user);
-        Task<int?> GetTaskGroupIdByUserId(string userId);
     }
 }

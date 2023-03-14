@@ -1,4 +1,4 @@
-#line {
+/*#line {
     height: 5px;
     border-width: 0;
     color: black;
@@ -34,9 +34,9 @@ html {
     right: 0px;
 }
 
-.logo-img {
+.logo-img {*/
     /*margin-left: -30%;*/
-    margin-right: 10px;
+    /*margin-right: 10px;
 }
 
 #btn-login:hover {
@@ -75,5 +75,5 @@ html {
     font-size: 35px;
     margin-right: 20%;
     color: #424242;
-}
+}*/
 

@@ -12,7 +12,6 @@
             {
                 Name = Name,
                 User = user,
-                UserId = user.Id
             };
         }
     }

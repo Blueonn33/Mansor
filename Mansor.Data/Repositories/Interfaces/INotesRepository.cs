@@ -9,7 +9,7 @@ namespace Mansor.Data.Repositories.Interfaces
 {
     public interface INotesRepository : IRepository<Note>
     {
-        Task<IEnumerable<Note>> GetNotesByUserId(int userId);
+        Task<IEnumerable<Note>> GetNotesByUserId(string userId);
         Task<int> GetCountAsync();
         Task<IEnumerable<Note>> GetAllNotes();
         Task<Note?> GetNoteByTitle(string title);

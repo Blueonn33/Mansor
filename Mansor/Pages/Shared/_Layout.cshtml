@@ -1,0 +1,136 @@
+﻿@using Microsoft.AspNetCore.Hosting
+@using Microsoft.AspNetCore.Mvc.ViewEngines
+@inject IWebHostEnvironment Environment
+@inject ICompositeViewEngine Engine
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Mansor</title>
+    
+    <environment include="Development">
+        <link rel="stylesheet" href="~/Identity/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/Identity/css/site.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+              integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous"
+              asp-fallback-href="~/Identity/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/Identity/css/site.css" asp-append-version="true" />
+        <link rel="stylesheet" href="./css/Fonts/Open_Sans/stylesheet.css" asp-append-version="true" />
+    </environment>
+
+    @*I use the <style> tag instead of a css file to change the style of the .cshtml because of 
+        an unknown issue with the out-of-the-box template*@
+    <style>
+        #mynav{
+            background-color: black !important;
+            position: absolute;
+            height: auto;
+            left: 0px;
+            right: 0px;
+        }
+        #logo-title {
+            font-size: 35px;
+            margin-right: 31%;
+            color: #424242;
+            margin-top: 2%;
+        }
+        .a-navbar-brand {
+            white-space: normal;
+            text-align: center;
+            word-break: break-all;
+        }
+        #btn-login {
+            position: absolute;
+            bottom: 0px;
+        }
+        #footer{
+            height: 80px;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: stretch;
+            text-align: center;
+            background-color: black;
+            margin-top: 15vh;
+        }
+    </style>
+
+</head>
+<body>
+    <header id="navigation-content">
+        <nav id = "mynav" class="navbar-expand-sm navbar-toggleable-sm ng-white" light>
+            <div class="container">
+                <img class="logo-img" src='/Images/Logo.png' height="90" width="100" alt="a grey round that gets darker">
+                <a id="logo-title" class="a-navbar" href="~/">Mansor</a>
+                <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse ">
+                    @{
+                        var result = Engine.FindView(ViewContext, "_LoginPartial", isMainPage: false);
+                    }
+                    @if (result.Success)
+                    {
+                        await Html.RenderPartialAsync("_LoginPartial");
+                    }
+                    else
+                    {
+                        throw new InvalidOperationException("The default Identity UI layout requires a partial view '_LoginPartial' " +
+                            "usually located at '/Pages/_LoginPartial' or at '/Views/Shared/_LoginPartial' to work. Based on your configuration " +
+                            $"we have looked at it in the following locations: {System.Environment.NewLine}{string.Join(System.Environment.NewLine, result.SearchedLocations)}.");
+                    }
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <partial name="_CookieConsentPartial" optional />
+        <main role="main" class="">
+            @RenderBody()
+        </main>
+    </div>
+    <footer id="footer" class="fixed-bottom ">
+        <div class="row" id="dev">
+            <h5 id="credits">Created by: Martin Marinov</h5>
+        </div>
+        <div id="main-content" className="row">
+            <div>
+                <a href="https://www.youtube.com/channel/UCdOH10Te0taKiNJA8GJHhvw" class="fa fa-footer" >
+                    <FaYoutube /></a>
+                <a href="https://www.instagram.com/mansorwebsite/" class="fa fa-footer">
+                    <FaInstagram /></a>     
+            </div>
+        </div>
+        </footer>
+
+    <environment include="Development">
+        <script src="~/Identity/lib/jquery/dist/jquery.js"></script>
+        <script src="~/Identity/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+        <script src="~/Identity/js/site.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+                asp-fallback-src="~/Identity/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+                asp-fallback-src="~/Identity/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj">
+        </script>
+        <script src="~/Identity/js/site.js" asp-append-version="true"></script>
+    </environment>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

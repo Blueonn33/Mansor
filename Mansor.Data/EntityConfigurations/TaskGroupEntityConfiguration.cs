@@ -10,29 +10,17 @@ namespace Mansor.Data.EntityConfigurations
         {
             builder.ToTable("TaskGroups");
 
-            builder.HasKey(tg => tg.Id);
-            builder.Property(tg => tg.Name).HasMaxLength(255);
+            builder.HasKey(p => p.Id);
+            builder.Property(p => p.Name).HasMaxLength(255);
 
-            builder.HasOne(u => u.User)
-                .WithMany(tg => tg.TaskGroups)
-                .HasForeignKey(i => i.UserId);
+            builder.HasOne(tg => tg.User)
+                .WithMany(u => u.TaskGroups)
+                .HasForeignKey(u => u.UserId);
 
-            builder.HasMany(ti => ti.TaskItems)
-                .WithMany(tg => tg.TaskGroups)
-                .UsingEntity<Dictionary<string, object>>(
-                "TaskGroupTaskItems",
-                j => j
-                    .HasOne<TaskItem>()
-                    .WithMany()
-                    .HasForeignKey("TaskItemId")
-                    .HasConstraintName("FK_TaskGroupTaskItems_TaskItems_TaskItemId")
-                    .OnDelete(DeleteBehavior.Cascade),
-                j => j
-                    .HasOne<TaskGroup>()
-                    .WithMany()
-                    .HasForeignKey("TaskGroupId")
-                    .HasConstraintName("FK_TaskGroupTaskItems_TaskGroups_TaskGroupId")
-                    .OnDelete(DeleteBehavior.ClientCascade));
+            builder.HasMany(tg => tg.TaskItems)
+                 .WithOne(ti => ti.TaskGroup)
+                 .HasForeignKey(ti => ti.TaskGroupId);
+
         }
     }
 }

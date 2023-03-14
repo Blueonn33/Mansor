@@ -13,6 +13,7 @@ namespace Mansor.Controllers
         {
             _notesService = notesService;
         }
+
         [HttpGet]
         [Route("api/notes")]
         public async Task<IEnumerable<Note>> GetAllNotes()

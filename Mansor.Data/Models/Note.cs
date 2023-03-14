@@ -10,26 +10,21 @@ namespace Mansor.Data.Models
         {
             Title = Guid.NewGuid().ToString();
             Content = string.Empty;
-            Users = new List<User>();
         }
 
-        public Note(int userId, string title, string content) : this()
+        public Note(User? user, string title, string content) : this()
         {
-            UserId = userId;
+            _user = user;
             Title = title ?? throw new ArgumentNullException(nameof(title));
             Content = content;
         }
         public int Id { get; set; }
-        public int UserId { get; set; }
-        private User? _user;
-        public User User
-        {
-            get => _user ?? throw new InvalidOperationException("Uninitialized property: " + nameof(User));
-            set => _user = value;
-        }
         public string Title { get; set; }
         public string Content { get; set; }
 
-        public ICollection<User> Users { get; set; }
+        public User? _user;
+        public string? UserId { get; set; }
+        public User User;
+
     }
 }

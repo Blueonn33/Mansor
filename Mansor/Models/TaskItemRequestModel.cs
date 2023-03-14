@@ -2,7 +2,7 @@
 
 namespace Mansor.Models
 {
-    public class TaskItemsRequestModel
+    public class TaskItemRequestModel
     {
         public string Value { get; set; }
         public int TaskGroupId { get; set; }

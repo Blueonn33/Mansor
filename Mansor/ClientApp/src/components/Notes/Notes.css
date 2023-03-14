@@ -16,13 +16,13 @@
 .notesListHeaderWrapper {
     background-color: #424242;
     color: white;
-    margin-top: 130px;
+    margin-top: 100px;
     height: max-content;
     margin-left: 42%;
 }
 
 .notesListHeader {
-    margin-top: -2rem;
+    margin-top: -4rem;
     font-weight: 700;
     font-size: 50px;
 }

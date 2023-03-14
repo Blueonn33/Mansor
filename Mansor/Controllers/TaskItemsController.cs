@@ -39,17 +39,17 @@ namespace Mansor.Controllers
             return Ok(items);
         }
 
-        [HttpPost]
-        [Route("api/create/taskItem")]
-        public async Task<IActionResult> CreateTaskItems([FromBody] TaskItemsRequestModel taskItemsRequestModel)
-        {
-            var userId = _usersService.GetCurrentUserId().Result;
-            var taskGroupId = await _usersService.GetTaskGroupIdByUserId(userId);
-            var taskGroup = await _taskGroupsService.GetTaskGroupById(taskGroupId.Value);
-            var taskItem = taskItemsRequestModel.TaskItems(taskGroup);
-            var result = await _taskItemsService.CreateTaskItem(taskItem);
+        //[HttpPost]
+        //[Route("api/create/taskItem")]
+        //public async Task<IActionResult> CreateTaskItems([FromBody] TaskItemRequestModel taskItemsRequestModel)
+        //{
+        //    var userId = _usersService.GetCurrentUserId().Result;
+        //    var taskGroupId = await _usersService.GetTaskGroupIdByUserId(userId);
+        //    var taskGroup = await _taskGroupsService.GetTaskGroupById(taskGroupId.Value);
+        //    var taskItem = taskItemsRequestModel.TaskItems(taskGroup);
+        //    var result = await _taskItemsService.CreateTaskItem(taskItem);
 
-            return Ok(result);
-        }
+        //    return Ok(result);
+        //}
     }
 }
