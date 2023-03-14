@@ -10,6 +10,8 @@ import { TasksCalendar } from './components/TasksCalendar/TasksCalendar';
 import { RegisterMenu } from './components/RegisterMenu/RegisterMenu';
 import Notes from './components/Notes/Notes';
 import { NotesComponent } from './components/NotesComponent/NotesComponent';
+import ApiAuthorizationRoutes from './components/api-authorization/ApiAuthorizationRoutes';
+import { ApplicationPaths } from './components/api-authorization/ApiAuthorizationConstants';
 
 
 export default class App extends Component {
@@ -26,12 +28,12 @@ export default class App extends Component {
 
                     <Route path='/' element={<LandingPage />} />
                     <Route path='/register' element={<RegisterMenu />} />
-                    {/*   <Route path='/taskGroups/:id' element={<Tasks />} />*/}
                     <Route path='/taskItems/:id' element={<TasksComponent />} />
                     <Route path='/taskGroups' element={<TaskGroupsComponent />} />
                     <Route path='/calendar' element={<TasksCalendar />} />
                     <Route path='/notes' element={<Notes />} />
                     <Route path='/addNote' element={<NotesComponent />} />
+                    <Route path={ApplicationPaths.ApiAuthorizationPrefix} element={<ApiAuthorizationRoutes />} />
                 </Routes>
             </Layout>
         );

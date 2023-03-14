@@ -58,7 +58,7 @@ export class AddNote extends Component {
                 body: JSON.stringify({
                     "title": titleInput,
                     "content": contentInput,
-                    "userId": 1
+                    "userId": "5b8a9940-faa6-4afa-9328-7cfc792d5c78"
                 })
             })
                 .then((response) => {
@@ -70,7 +70,6 @@ export class AddNote extends Component {
                         this.setState({ errorMessageTitle: errors.success });
                         this.setState({ errorMessageContent: errors.success });
                         this.setState({ textColor: color.success });
-                        /*this.props.onNoteAdded(this.props.title);*/
                     }
                 })
                 .catch(error => {

@@ -8,6 +8,8 @@ import { TasksCalendar } from "./components/TasksCalendar/TasksCalendar";
 import { RegisterMenu } from "./components/RegisterMenu/RegisterMenu";
 import Notes from "./components/Notes/Notes";
 import { NotesComponent } from "./components/NotesComponent/NotesComponent";
+import ApiAuthorizationRoutes from "./components/api-authorization/ApiAuthorizationRoutes";
+import { ApplicationPaths } from './components/api-authorization/ApiAuthorizationConstants';
 
 const AppRoutes = [
     {
@@ -49,6 +51,10 @@ const AppRoutes = [
     {
         path: '/addNote',
         element: <NotesComponent />
+    },
+    {
+        path: {ApplicationPaths},
+        element: <ApiAuthorizationRoutes />
     },
 ];
 

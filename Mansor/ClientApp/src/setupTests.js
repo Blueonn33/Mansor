@@ -14,8 +14,8 @@ window.fetch = () => {
             json: () => Promise.resolve({
                 "authority": "https://localhost:7286",
                 "client_id": "Mansor",
-                //"redirect_uri": "https://localhost:7286/authentication/login-callback",
-                //"post_logout_redirect_uri": "https://localhost:7286/authentication/logout-callback",
+                "redirect_uri": "https://localhost:7286/authentication/login-callback",
+                "post_logout_redirect_uri": "https://localhost:7286/authentication/logout-callback",
                 "response_type": "id_token token",
                 "scope": "MansorAPI openid profile"
             })
