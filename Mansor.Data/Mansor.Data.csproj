@@ -9,6 +9,204 @@
   <ItemGroup>
     <None Remove="Models\ORMDataModel1.xpo" />
     <None Remove="Models\ORMDataModel1.xpo.diagram" />
+    <None Remove="ToDeleteAreas\Identity\Pages\Account\AccessDenied.cshtml" />
+    <None Remove="ToDeleteAreas\Identity\Pages\Account\ConfirmEmail.cshtml" />
+    <None Remove="ToDeleteAreas\Identity\Pages\Account\ConfirmEmailChange.cshtml" />
+    <None Remove="ToDeleteAreas\Identity\Pages\Account\ExternalLogin.cshtml" />
+    <None Remove="ToDeleteAreas\Identity\Pages\Account\ForgotPassword.cshtml" />
+    <None Remove="ToDeleteAreas\Identity\Pages\Account\ForgotPasswordConfirmation.cshtml" />
+    <None Remove="ToDeleteAreas\Identity\Pages\Account\Lockout.cshtml" />
+    <None Remove="ToDeleteAreas\Identity\Pages\Account\Login.cshtml" />
+    <None Remove="ToDeleteAreas\Identity\Pages\Account\LoginWith2fa.cshtml" />
+    <None Remove="ToDeleteAreas\Identity\Pages\Account\LoginWithRecoveryCode.cshtml" />
+    <None Remove="ToDeleteAreas\Identity\Pages\Account\Logout.cshtml" />
+    <None Remove="ToDeleteAreas\Identity\Pages\Account\Manage\ChangePassword.cshtml" />
+    <None Remove="ToDeleteAreas\Identity\Pages\Account\Manage\DeletePersonalData.cshtml" />
+    <None Remove="ToDeleteAreas\Identity\Pages\Account\Manage\Disable2fa.cshtml" />
+    <None Remove="ToDeleteAreas\Identity\Pages\Account\Manage\DownloadPersonalData.cshtml" />
+    <None Remove="ToDeleteAreas\Identity\Pages\Account\Manage\Email.cshtml" />
+    <None Remove="ToDeleteAreas\Identity\Pages\Account\Manage\EnableAuthenticator.cshtml" />
+    <None Remove="ToDeleteAreas\Identity\Pages\Account\Manage\ExternalLogins.cshtml" />
+    <None Remove="ToDeleteAreas\Identity\Pages\Account\Manage\GenerateRecoveryCodes.cshtml" />
+    <None Remove="ToDeleteAreas\Identity\Pages\Account\Manage\Index.cshtml" />
+    <None Remove="ToDeleteAreas\Identity\Pages\Account\Manage\PersonalData.cshtml" />
+    <None Remove="ToDeleteAreas\Identity\Pages\Account\Manage\ResetAuthenticator.cshtml" />
+    <None Remove="ToDeleteAreas\Identity\Pages\Account\Manage\SetPassword.cshtml" />
+    <None Remove="ToDeleteAreas\Identity\Pages\Account\Manage\ShowRecoveryCodes.cshtml" />
+    <None Remove="ToDeleteAreas\Identity\Pages\Account\Manage\TwoFactorAuthentication.cshtml" />
+    <None Remove="ToDeleteAreas\Identity\Pages\Account\Manage\_Layout.cshtml" />
+    <None Remove="ToDeleteAreas\Identity\Pages\Account\Manage\_ManageNav.cshtml" />
+    <None Remove="ToDeleteAreas\Identity\Pages\Account\Manage\_StatusMessage.cshtml" />
+    <None Remove="ToDeleteAreas\Identity\Pages\Account\Manage\_ViewImports.cshtml" />
+    <None Remove="ToDeleteAreas\Identity\Pages\Account\Register.cshtml" />
+    <None Remove="ToDeleteAreas\Identity\Pages\Account\RegisterConfirmation.cshtml" />
+    <None Remove="ToDeleteAreas\Identity\Pages\Account\ResendEmailConfirmation.cshtml" />
+    <None Remove="ToDeleteAreas\Identity\Pages\Account\ResetPassword.cshtml" />
+    <None Remove="ToDeleteAreas\Identity\Pages\Account\ResetPasswordConfirmation.cshtml" />
+    <None Remove="ToDeleteAreas\Identity\Pages\Account\_StatusMessage.cshtml" />
+    <None Remove="ToDeleteAreas\Identity\Pages\Account\_ViewImports.cshtml" />
+    <None Remove="ToDeleteAreas\Identity\Pages\Error.cshtml" />
+    <None Remove="ToDeleteAreas\Identity\Pages\_ViewImports.cshtml" />
+    <None Remove="ToDeleteAreas\Identity\Pages\_ViewStart.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="ToDeleteAreas\Identity\Pages\Account\AccessDenied.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ToDeleteAreas\Identity\Pages\Account\ConfirmEmail.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ToDeleteAreas\Identity\Pages\Account\ConfirmEmailChange.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ToDeleteAreas\Identity\Pages\Account\ExternalLogin.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ToDeleteAreas\Identity\Pages\Account\ForgotPassword.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ToDeleteAreas\Identity\Pages\Account\ForgotPasswordConfirmation.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ToDeleteAreas\Identity\Pages\Account\Lockout.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ToDeleteAreas\Identity\Pages\Account\Login.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ToDeleteAreas\Identity\Pages\Account\LoginWith2fa.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ToDeleteAreas\Identity\Pages\Account\LoginWithRecoveryCode.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ToDeleteAreas\Identity\Pages\Account\Logout.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ToDeleteAreas\Identity\Pages\Account\Manage\ChangePassword.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ToDeleteAreas\Identity\Pages\Account\Manage\DeletePersonalData.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ToDeleteAreas\Identity\Pages\Account\Manage\Disable2fa.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ToDeleteAreas\Identity\Pages\Account\Manage\DownloadPersonalData.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ToDeleteAreas\Identity\Pages\Account\Manage\Email.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ToDeleteAreas\Identity\Pages\Account\Manage\EnableAuthenticator.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ToDeleteAreas\Identity\Pages\Account\Manage\ExternalLogins.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ToDeleteAreas\Identity\Pages\Account\Manage\GenerateRecoveryCodes.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ToDeleteAreas\Identity\Pages\Account\Manage\Index.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ToDeleteAreas\Identity\Pages\Account\Manage\PersonalData.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ToDeleteAreas\Identity\Pages\Account\Manage\ResetAuthenticator.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ToDeleteAreas\Identity\Pages\Account\Manage\SetPassword.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ToDeleteAreas\Identity\Pages\Account\Manage\ShowRecoveryCodes.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ToDeleteAreas\Identity\Pages\Account\Manage\TwoFactorAuthentication.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ToDeleteAreas\Identity\Pages\Account\Manage\_Layout.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ToDeleteAreas\Identity\Pages\Account\Manage\_ManageNav.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ToDeleteAreas\Identity\Pages\Account\Manage\_StatusMessage.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ToDeleteAreas\Identity\Pages\Account\Manage\_ViewImports.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ToDeleteAreas\Identity\Pages\Account\Register.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ToDeleteAreas\Identity\Pages\Account\RegisterConfirmation.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ToDeleteAreas\Identity\Pages\Account\ResendEmailConfirmation.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ToDeleteAreas\Identity\Pages\Account\ResetPassword.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ToDeleteAreas\Identity\Pages\Account\ResetPasswordConfirmation.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ToDeleteAreas\Identity\Pages\Account\_StatusMessage.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ToDeleteAreas\Identity\Pages\Account\_ViewImports.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ToDeleteAreas\Identity\Pages\Error.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ToDeleteAreas\Identity\Pages\_ViewImports.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ToDeleteAreas\Identity\Pages\_ViewStart.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
