@@ -7,8 +7,10 @@ export class AddTaskItem extends Component {
         super(props);
         this.state = {
             value: '',
+            taskGroupId: '',
+            isCompleted: ''
         }
-        this.createItem = this.createItem.bind(this);
+        this.createTaskItem = this.createTaskItem.bind(this);
         this.handleChange = this.handleChange.bind(this);
     }
 
@@ -22,34 +24,70 @@ export class AddTaskItem extends Component {
         setTimeout(function () { msg.className = msg.className.replace("show", ""); }, 3000);
     }
 
-    async createItem(taskGroupId) {
+    //async createItem(taskGroupId) {
+    //    console.log(this.state.value);
+    //    var input = this.state.value;
+
+    //    if (input === '') {
+    //        this.invalidInput();
+    //    }
+    //    else {
+    //        let splittedURL = window.location.pathname.split('/')
+    //        taskGroupId = splittedURL[splittedURL.length - 1]
+    //        await fetch(endpoints.createTaskItem(taskGroupId), {
+    //            method: 'POST',
+    //            //headers: {
+    //            //    'Content-Type': 'application/json',
+    //            //},
+    //            //body: JSON.stringify({
+    //            //})
+    //        })
+    //    }
+    //}
+
+    async createTaskItem(taskGroupId) {
         console.log(this.state.value);
         var input = this.state.value;
+        let splittedURL = window.location.pathname.split('/')
+        taskGroupId = splittedURL[splittedURL.length - 1]
 
         if (input === '') {
             this.invalidInput();
         }
         else {
-            let splittedURL = window.location.pathname.split('/')
-            taskGroupId = splittedURL[splittedURL.length - 1]
             await fetch(endpoints.createTaskItem(taskGroupId), {
                 method: 'POST',
-                //headers: {
-                //    'Content-Type': 'application/json',
-                //},
-                //body: JSON.stringify({
-                //})
+                headers: {
+                    'Content-type': 'application/json',
+                },
+                body: JSON.stringify({
+                    value: input,
+                    taskGroupId: taskGroupId,
+                    isCompleted: false
+                })
             })
+                .then((response) => {
+                    if (!response.ok) {
+                       console.log("invalid input")
+                    }
+                    else {
+                        this.props.onTaskItemAdded(this.props.value);
+                    }
+                })
+                .catch(error => {
+                    console.error(error);
+                });
         }
     }
-
     render() {
         return (
             <div>
                 <div className="container">
                     <div className="container">
-                        <input type="text" id="input-item"/>
-                        <span className="addBtn" onClick={() => this.createItem()}>Add</span>
+                        <input type="text" id="input-item"
+                            onChange={(e) => this.setState({ 'value': e.target.value })}
+                        />
+                        <span className="addBtn" onClick={() => this.createTaskItem()}>Add</span>
                     </div>
                 </div>
                 <div id="snackbar">Еnter text in the input field</div>

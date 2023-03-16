@@ -5,7 +5,7 @@ export const endpoints = {
     createTaskGroup: () => `${apiBaseUrl}/api/create/taskGroup`,
     //loadTaskItems: () => `${apiBaseUrl}/api/taskItems`,
     loadTaskItems: (taskGroupId) => `${apiBaseUrl}/api/taskItems/${taskGroupId}`,
-    createTaskItem: () => `${apiBaseUrl}/api/create/taskItem`,
+    createTaskItem: (taskGroupId) => `${apiBaseUrl}/api/create/taskItem/${taskGroupId}`,
     loadNotes: () => `${apiBaseUrl}/api/notes`,
     createNote: () => `${apiBaseUrl}/api/create/note`,
 }

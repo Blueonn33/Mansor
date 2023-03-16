@@ -39,17 +39,15 @@ namespace Mansor.Controllers
             return Ok(items);
         }
 
-        //[HttpPost]
-        //[Route("api/create/taskItem")]
-        //public async Task<IActionResult> CreateTaskItems([FromBody] TaskItemRequestModel taskItemsRequestModel)
-        //{
-        //    var userId = _usersService.GetCurrentUserId().Result;
-        //    var taskGroupId = await _usersService.GetTaskGroupIdByUserId(userId);
-        //    var taskGroup = await _taskGroupsService.GetTaskGroupById(taskGroupId.Value);
-        //    var taskItem = taskItemsRequestModel.TaskItems(taskGroup);
-        //    var result = await _taskItemsService.CreateTaskItem(taskItem);
+        [HttpPost]
+        [Route("api/create/taskItem/{taskGroupId}")]
+        public async Task<IActionResult> CreateTaskItems([FromRoute] int taskGroupId, TaskItemRequestModel taskItemsRequestModel)
+        {
+            Response.Headers.Add("Access-Control-Allow-Origin", "*");
+            var taskGroup = await _taskGroupsService.GetTaskGroupById(taskGroupId);
+            var taskItem = taskItemsRequestModel.ToCreateTaskItem(taskGroup);
 
-        //    return Ok(result);
-        //}
+            return Ok(taskItem);
+        }
     }
 }

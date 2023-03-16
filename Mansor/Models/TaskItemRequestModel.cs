@@ -8,7 +8,7 @@ namespace Mansor.Models
         public int TaskGroupId { get; set; }
         public bool IsCompleted { get; set; }
 
-        public TaskItem TaskItems(TaskGroup taskGroup)
+        public TaskItem ToCreateTaskItem(TaskGroup taskGroup)
         {
             return new TaskItem()
             {
