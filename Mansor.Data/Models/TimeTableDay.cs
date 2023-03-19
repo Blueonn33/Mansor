@@ -16,8 +16,8 @@
         public string Name { get; set; }
 
         public User? _user;
-        public User User;
         public string? UserId { get; set; }
+        public User User;
         public ICollection<TimeTableItem> TimeTableItems { get; set; }
     }
 }
