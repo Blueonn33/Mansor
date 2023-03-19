@@ -10,6 +10,7 @@ import Notes from "./components/Notes/Notes";
 import { NotesComponent } from "./components/NotesComponent/NotesComponent";
 import ApiAuthorizationRoutes from "./components/api-authorization/ApiAuthorizationRoutes";
 import { ApplicationPaths } from './components/api-authorization/ApiAuthorizationConstants';
+import TimeTablesComponent from "./components/TimeTablesComponent/TimeTablesComponent";
 
 const AppRoutes = [
     {
@@ -51,6 +52,10 @@ const AppRoutes = [
     {
         path: '/addNote',
         element: <NotesComponent />
+    },
+    {
+        path: '/timeTable',
+        element: <TimeTablesComponent />
     },
     {
         path: {ApplicationPaths},

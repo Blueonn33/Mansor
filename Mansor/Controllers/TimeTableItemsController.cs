@@ -20,9 +20,10 @@
         }
 
         [HttpGet]
-        [Route("api/timeTableItems/{timeTableDayId}")]
+        [Route("api/subjects/{timeTableDayId}")]
         public async Task<IActionResult> GetAllTimeTableItems([FromRoute] int timeTableDayId)
         {
+            Response.Headers.Add("Access-Control-Allow-Origin", "*");
             var records = await _timeTableItemsService.GetAllTimeTableItems(timeTableDayId);
 
             if (!records.Any())
@@ -32,17 +33,9 @@
             return Ok(records);
         }
 
-        [HttpGet]
-        [Route("api/timeTableDaysItemsUnique/{timeTableDayId}")]
-        public async Task<IEnumerable<string>> GetAllTimeTableDaysItems([FromRoute] int timeTableDayId)
-        {
-            var timeTableDay = await _timeTableDaysService.GetTimeTableDayByIdAsync(timeTableDayId);
-
-            return await _timeTableItemsService.GetAllTimeTablesItemsAsync(timeTableDay.UserId);
-        }
         //[HttpPost]
         //[Route("api/create/timeTableDaysRecords/{timeTableDayId}")]
-        //public async Task<IActionResult> CreateTimeTableItems([FromBody] TimeTableItemRequestModel timeTableItemsRequestModel)
+        //public async Task<IActionResult> CreateTimeTableItems([FromRoute] int timeTableDayId, [FromBody] TimeTableItemRequestModel timeTableItemsRequestModel)
         //{
         //    var timeTableDay = await _timeTableDaysService.GetTimeTableDayById(timeTableDayId);
         //    var timeTableItem = timeTableItemsRequestModel.TimeTableItems(timeTableDay);

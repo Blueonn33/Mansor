@@ -62,10 +62,10 @@ export default class TasksComponent extends Component {
     //endpoints.loadTaskItems()
     //}
 
-    async loadTaskItems(){
-        //let splittedURL = window.location.pathname.split('/')
-        //taskGroupId = splittedURL[splittedURL.length - 1]
-        let url = 'https://localhost:7286/api/taskItems';
+    async loadTaskItems(taskGroupId){
+        let splittedURL = window.location.pathname.split('/')
+        taskGroupId = splittedURL[splittedURL.length - 1]
+        let url = `https://localhost:7286/api/taskItems/${taskGroupId}`;
         //let url = 'https://localhost:7286/api/notes';
 
         //await fetch(endpoints.loadTaskItems(taskGroupId))

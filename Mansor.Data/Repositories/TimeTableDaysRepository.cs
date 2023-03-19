@@ -14,9 +14,9 @@ namespace Mansor.Data.Repositories
 
         public async Task<int> GetCountAsync() => await Entities.CountAsync();
 
-        public async Task<IEnumerable<TimeTableDay>> GetAllTimeTableDays() => await Entities.AsNoTracking().ToListAsync();
+        public async Task<IEnumerable<TimeTableDay>> GetAllDays() => await Entities.ToListAsync();
 
-        public async Task<TimeTableDay?> GetTimeTableDayByName(string name)
+        public async Task<TimeTableDay?> GetDayByName(string name)
         {
             return await Entities.FirstOrDefaultAsync(t => t.Name == name);
         }

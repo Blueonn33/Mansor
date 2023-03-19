@@ -24,37 +24,20 @@ export class AddTaskItem extends Component {
         setTimeout(function () { msg.className = msg.className.replace("show", ""); }, 3000);
     }
 
-    //async createItem(taskGroupId) {
-    //    console.log(this.state.value);
-    //    var input = this.state.value;
-
-    //    if (input === '') {
-    //        this.invalidInput();
-    //    }
-    //    else {
-    //        let splittedURL = window.location.pathname.split('/')
-    //        taskGroupId = splittedURL[splittedURL.length - 1]
-    //        await fetch(endpoints.createTaskItem(taskGroupId), {
-    //            method: 'POST',
-    //            //headers: {
-    //            //    'Content-Type': 'application/json',
-    //            //},
-    //            //body: JSON.stringify({
-    //            //})
-    //        })
-    //    }
-    //}
+    componentDidMount() {
+        this.render();
+    }
 
     async createTaskItem(taskGroupId) {
         console.log(this.state.value);
         var input = this.state.value;
-        let splittedURL = window.location.pathname.split('/')
-        taskGroupId = splittedURL[splittedURL.length - 1]
 
         if (input === '') {
             this.invalidInput();
         }
         else {
+            let splittedURL = window.location.pathname.split('/')
+            taskGroupId = splittedURL[splittedURL.length - 1]
             await fetch(endpoints.createTaskItem(taskGroupId), {
                 method: 'POST',
                 headers: {
@@ -68,7 +51,8 @@ export class AddTaskItem extends Component {
             })
                 .then((response) => {
                     if (!response.ok) {
-                       console.log("invalid input")
+                        console.log("invalid input")
+               
                     }
                     else {
                         this.props.onTaskItemAdded(this.props.value);
@@ -79,6 +63,7 @@ export class AddTaskItem extends Component {
                 });
         }
     }
+
     render() {
         return (
             <div>
@@ -87,7 +72,7 @@ export class AddTaskItem extends Component {
                         <input type="text" id="input-item"
                             onChange={(e) => this.setState({ 'value': e.target.value })}
                         />
-                        <span className="addBtn" onClick={() => this.createTaskItem()}>Add</span>
+                        <span className="addBtn" onClick={this.createTaskItem}>Add</span>
                     </div>
                 </div>
                 <div id="snackbar">Еnter text in the input field</div>

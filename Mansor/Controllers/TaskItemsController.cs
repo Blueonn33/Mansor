@@ -41,13 +41,32 @@ namespace Mansor.Controllers
 
         [HttpPost]
         [Route("api/create/taskItem/{taskGroupId}")]
-        public async Task<IActionResult> CreateTaskItems([FromRoute] int taskGroupId, TaskItemRequestModel taskItemsRequestModel)
+        public async Task<IActionResult> CreateTaskItems([FromRoute] int taskGroupId, [FromBody] TaskItemRequestModel taskItemsRequestModel)
         {
-            Response.Headers.Add("Access-Control-Allow-Origin", "*");
             var taskGroup = await _taskGroupsService.GetTaskGroupById(taskGroupId);
-            var taskItem = taskItemsRequestModel.ToCreateTaskItem(taskGroup);
+            var taskItem = taskItemsRequestModel.TaskItems(taskGroup);
 
-            return Ok(taskItem);
+            var result = await _taskItemsService.CreateTaskItem(taskItem);
+
+            return Ok(result);
+        }
+
+        [HttpDelete]
+        [Route("api/delete/taskItem/{taskItemId}")]
+        public async Task<IActionResult> DeleteTaskItem([FromRoute] int id)
+        {
+            var targetItem = await _taskItemsService.GetTaskItemById(id);
+            if (targetItem == null)
+            {
+                return NotFound("Task is completed");
+            }
+            if (targetItem.IsCompleted)
+            {
+                return BadRequest("Task is already completed");
+            }
+            await _taskItemsService.DeleteAsync(targetItem);
+
+            return Ok(targetItem);
         }
     }
 }

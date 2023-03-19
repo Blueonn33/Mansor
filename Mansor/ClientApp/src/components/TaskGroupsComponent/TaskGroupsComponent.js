@@ -15,24 +15,6 @@ export default class TaskGroupsComponent extends Component {
     async componentDidMount() {
         this.loadTaskGroups();
     }
-    //async loadTaskGroups() {
-    //    let url = endpoints.loadTaskGroups();
-
-    //    fetch(url)
-    //        .then(response => response.json())
-            //.then(data => {
-            //    data.forEach(record => {
-            //        console.log(record.name);
-            //        const container = document.getElementsByClassName('taskGroupsContainers')[0];
-            //        container.innerHTML += `<p class="groupElements">${record.name}</p>`;
-            //        container.innerHTML += '<button class="btn-groups"></button>';
-
-            //        //container.forEach(this.addButton)
-            //    });
-            //})
-    //        .catch(error => console.error(error));
-    //}
-
     async loadTaskGroups() {
         let url = endpoints.loadTaskGroups();
         fetch(url)
@@ -56,6 +38,9 @@ export default class TaskGroupsComponent extends Component {
                         </button> 
                         <button className='calendarBtn'>
                             <a href={`https://localhost:44494/notes`} className='calendarBtnText'>Notes</a>
+                        </button> 
+                        <button className='timeTableBtn'>
+                            <a href={`https://localhost:44494/timeTable`} className='timeTableBtnText'>Time Table</a>
                         </button> 
                         <hr id="line"></hr>
                     </div>
@@ -82,7 +67,6 @@ export default class TaskGroupsComponent extends Component {
                             })}
                         </div>
                     </div>
-                    {/*<button className="btn-groups"></button>*/}
                 </div>
             </div>
         );

@@ -13,17 +13,17 @@ public class TimeTableDaysService : ITimeTableDaysService
         _timeTableDaysRepository = timeTableDaysRepository;
     }
 
-    public async Task<IEnumerable<TimeTableDay>> GetTimeTableDaysAsync() => await _timeTableDaysRepository.GetAllTimeTableDays();
+    public async Task<IEnumerable<TimeTableDay>> GetDaysAsync() => await _timeTableDaysRepository.GetAllDays();
 
-    public async Task<TimeTableDay?> GetTimeTableDayByIdAsync(int id) => await _timeTableDaysRepository.FindAsync(id);
+    public async Task<TimeTableDay?> GetDayByIdAsync(int id) => await _timeTableDaysRepository.FindAsync(id);
 
-    public async Task AddTimeTableDayAsync(TimeTableDay timeTableDay) => await _timeTableDaysRepository.AddAsync(timeTableDay);
+    public async Task AddDayAsync(TimeTableDay timeTableDay) => await _timeTableDaysRepository.AddAsync(timeTableDay);
 
-    public async Task<TimeTableDay?> GetTimeTableDayByNameAsync(string name)
+    public async Task<TimeTableDay?> GetDayByNameAsync(string name)
     {
-        return await _timeTableDaysRepository.GetTimeTableDayByName(name);
+        return await _timeTableDaysRepository.GetDayByName(name);
     }
 
-    public async Task<TimeTableDay?> GetTimeTableDayByTaskIdAsync(Task<int?> id) => await _timeTableDaysRepository.FindAsync(id);
+    public async Task<TimeTableDay?> GetDayByTaskIdAsync(Task<int?> id) => await _timeTableDaysRepository.FindAsync(id);
 
 }

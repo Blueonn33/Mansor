@@ -12,6 +12,7 @@ import Notes from './components/Notes/Notes';
 import { NotesComponent } from './components/NotesComponent/NotesComponent';
 import ApiAuthorizationRoutes from './components/api-authorization/ApiAuthorizationRoutes';
 import { ApplicationPaths } from './components/api-authorization/ApiAuthorizationConstants';
+import TimeTablesComponent from './components/TimeTablesComponent/TimeTablesComponent';
 
 
 export default class App extends Component {
@@ -33,6 +34,7 @@ export default class App extends Component {
                     <Route path='/calendar' element={<TasksCalendar />} />
                     <Route path='/notes' element={<Notes />} />
                     <Route path='/addNote' element={<NotesComponent />} />
+                    <Route path='/timeTable' element={<TimeTablesComponent />} />
                     <Route path={ApplicationPaths.ApiAuthorizationPrefix} element={<ApiAuthorizationRoutes />} />
                 </Routes>
             </Layout>

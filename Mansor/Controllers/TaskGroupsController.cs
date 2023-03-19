@@ -8,7 +8,7 @@ namespace Mansor.Controllers
     public class TaskGroupsController : ControllerBase
     {
         private readonly ITaskGroupsService _taskGroupsService;
-        private readonly IUsersService _usersService;
+        //private readonly IUsersService _usersService;
 
         public TaskGroupsController(ITaskGroupsService taskGroupsService)
         {

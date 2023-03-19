@@ -11,5 +11,6 @@ namespace Mansor.Data.Repositories.Interfaces
     {
         Task<IEnumerable<TaskItem>> GetAllTasksAsync(int taskGroupId);
         Task<IEnumerable<TaskItem>> GetAllTasks();
+        Task<TaskItem?> FindTaskItem(int id);
     }
 }

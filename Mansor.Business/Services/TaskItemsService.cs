@@ -28,5 +28,13 @@ namespace Mansor.Business.Services
         }
 
         public async Task<IEnumerable<TaskItem>> GetTaskItemsAsync() => await _taskItemsRepository.GetAllTasks();
+        public Task<TaskItem?> GetTaskItemById(int id)
+        {
+            return _taskItemsRepository.FindTaskItem(id);
+        }
+        public Task DeleteAsync(TaskItem taskItem)
+        {
+            return _taskItemsRepository.DeleteAsync(taskItem);
+        }
     }
 }

@@ -9,6 +9,7 @@ using Mansor.Data.Repositories.Interfaces;
 using Mansor.Business.Services;
 using Mansor.Business.Services.Interfaces;
 using Mansor.Data.Repositories;
+using Microsoft.AspNetCore.Builder;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -76,8 +77,12 @@ app.UseCors(builder =>
 });
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-app.UseAuthorization();
 app.UseRouting();
+app.UseAuthorization();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+});
 app.MapRazorPages();
 
 app.MapControllerRoute(
